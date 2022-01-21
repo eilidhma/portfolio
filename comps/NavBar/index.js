@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { motion } from "framer-motion";
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useTheme } from '../../utils/provider';
 import { themes, content_themes } from '../../utils/variables';
-import {BsDot} from 'react-icons/bs'
+import {BsDot} from 'react-icons/bs';
+import { MouseContext } from '../../utils/mousecontext';
 
 const NavCont = styled.div`
   position:fixed;
@@ -50,7 +51,7 @@ const Section = styled.a`
   font-family: 'Poppins', sans-serif;
   font-weight:300;
   font-size:16px;
-  color:${props=>props.color}
+  color:${props=>props.color};
 `
 
 const NavBar = ({
@@ -58,6 +59,8 @@ const NavBar = ({
 }) => {
 
   const {theme, setTheme} = useTheme();
+
+  const { cursorType, cursorChangeHandler } = useContext(MouseContext);
 
   const variants = {
     default: { rotate: 0 },
@@ -90,15 +93,27 @@ const NavBar = ({
         <text style={{color:content_themes[theme].color}}>{"<"}Ay<BsDot style={{paddingTop:5, marginLeft:-5, marginRight:-5}}/>lee{"/>"}</text>
       </LogoCont>
       <SectionsCont>
-        <Section color={content_themes[theme].color}>
+        <Section 
+        onMouseEnter={() => cursorChangeHandler("hovered")}
+        onMouseLeave={() => cursorChangeHandler("")} 
+        className='nav' 
+        color={content_themes[theme].color}>
           <text>1.0</text>
           <text>About</text>
         </Section>
-        <Section color={content_themes[theme].color}>
+        <Section 
+        onMouseEnter={() => cursorChangeHandler("hovered")}
+        onMouseLeave={() => cursorChangeHandler("")} 
+        className='nav' 
+        color={content_themes[theme].color}>
           <text>2.0</text>
           <text>Work</text>
         </Section>
-        <Section color={content_themes[theme].color}>
+        <Section 
+        onMouseEnter={() => cursorChangeHandler("hovered")}
+        onMouseLeave={() => cursorChangeHandler("")} 
+        className='nav' 
+        color={content_themes[theme].color}>
           <text>3.0</text>
           <text>Contact</text>
         </Section>
