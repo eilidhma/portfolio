@@ -5,12 +5,11 @@ import { useTheme } from '../../utils/provider';
 import { themes, content_themes } from '../../utils/variables';
 
 const Cont = styled.div`
-position:absolute;
-top:100px;
 display:flex;
 justify-content:flex-start;
 align-items:flex-start;
 width:100vw;
+margin-top:15vh;
 padding-left:8rem;
 padding-top:2rem;
 `

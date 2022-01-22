@@ -5,12 +5,13 @@ import { useTheme } from '../../utils/provider';
 import { themes, content_themes } from '../../utils/variables';
 
 const Cont = styled.div`
-display:flex;
-justify-content:flex-start;
-align-items:flex-start;
-width:100vw;
-padding-left:8rem;
-padding-top:10rem;
+  display:flex;
+  justify-content:flex-start;
+  align-items:flex-start;
+  width:100vw;
+  height:50vh;
+  padding-left:8rem;
+  margin-top:5rem;
 `
 
 const TextCont = styled.div`

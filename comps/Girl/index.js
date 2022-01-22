@@ -9,12 +9,14 @@ import { useState, useEffect } from 'react';
 import { useTheme } from '../../utils/provider';
 import { themes, content_themes } from '../../utils/variables';
 
+
 const Cont = styled.div`
   display:flex;
   justify-content:flex-end;
   align-items:flex-end;
   width:100vw;
-  padding-top:2rem;
+  height:50vh;
+  margin-top:2rem;
   padding-right:5rem;
 `
 
@@ -25,7 +27,7 @@ const Girl = ({}) => {
   const {theme, setTheme} = useTheme();
   const [isComplete, setIsComplete] = useState(false);
   const { scrollYProgress } = useViewportScroll();
-  const ySpace = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const ySpace = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
   const pathLength = useSpring(ySpace, { stiffness: 400, damping: 90 });
 
   useEffect(() => ySpace.onChange(x => setIsComplete(x >= 1)), [ySpace]);

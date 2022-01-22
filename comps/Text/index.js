@@ -15,16 +15,12 @@ const Cont = styled.div`
 
 const IntroText = styled.p`
   font-family: 'Italiana', serif;
-  font-size:8rem;
+  font-size:4rem;
   color:${props=>props.color};
 `
 
 
-const Intro = ({
-  color='black',
-  line1 = "line1",
-  line2 = "line2"
-}) => {
+const Text = ({}) => {
 
   const {theme, setTheme} = useTheme();
   const [on, setOn] = useState(true)
@@ -37,10 +33,10 @@ const Intro = ({
         style={{padding:20}}
       >
         <IntroText color={content_themes[theme].color}>
-        {line1} <br/>{line2} 
+        I am a front-end develoer <br/>with knowledge and <br/>experience in UX/UI design   
         </IntroText>
       </motion.div>
     </Cont>
 }
 
-export default Intro;
+export default Text;
