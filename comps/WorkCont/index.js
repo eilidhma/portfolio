@@ -56,20 +56,24 @@ const Text = styled.p`
   flex-direction:row;
 `
 
-const WorkCont = ({}) => {
+const WorkCont = ({
+  onClickSaveThePlate = () => {},
+  onClickGarden = () => {}
+}) => {
 
   const {theme, setTheme} = useTheme();
   const [on, setOn] = useState(true)
 
   return <Cont>
     <LeftSection>
-      <Title>2.1 Development</Title>
-      <Text style={{textAlign:'right'}}>alsfkj aslfkjasdkfj aslkdfj aslfdkj asdfklj asldfkj as</Text>
+      <Title color={content_themes[theme].color}>2.1 Development</Title>
+      <Text color={content_themes[theme].color} onClick={onClickSaveThePlate} style={{textAlign:'right'}}>SaveThePlate</Text>
+      <Text color={content_themes[theme].color} onClick={onClickGarden} style={{textAlign:'right'}}>Garden</Text>
     </LeftSection>
     <Line color={content_themes[theme].color}></Line>
     <RightSection>
-      <Title>2.2 Design</Title>
-      <Text style={{textAlign:'left'}}>alsfkj aslfkjasdkfj aslkdfj aslfdkj asdfklj asldfkj as</Text>
+      <Title color={content_themes[theme].color}>2.2 Design</Title>
+      <Text color={content_themes[theme].color} style={{textAlign:'left'}}>Coming soon</Text>
     </RightSection>
   </Cont>
 }

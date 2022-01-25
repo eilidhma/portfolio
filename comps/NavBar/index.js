@@ -141,7 +141,9 @@ const NavBar = ({
           <text>Contact</text>
         </Section>
       </SectionsCont>
-      <div style={{zIndex:101}} onClick={handleDarkMode}>
+      <div className='darkmode' style={{zIndex:101}} onClick={handleDarkMode}
+      onMouseEnter={() => cursorChangeHandler("hovered")}
+      onMouseLeave={() => cursorChangeHandler("")} >
         <DarkModeCont style={{
           top:25,
           right:25,

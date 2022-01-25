@@ -27,7 +27,7 @@ const Girl = ({}) => {
   const {theme, setTheme} = useTheme();
   const [isComplete, setIsComplete] = useState(false);
   const { scrollYProgress } = useViewportScroll();
-  const ySpace = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
+  const ySpace = useTransform(scrollYProgress, [0, 0.35], [0, 1]);
   const pathLength = useSpring(ySpace, { stiffness: 400, damping: 90 });
 
   useEffect(() => ySpace.onChange(x => setIsComplete(x >= 1)), [ySpace]);

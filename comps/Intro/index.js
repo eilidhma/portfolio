@@ -11,11 +11,13 @@ const Cont = styled.div`
   justify-content:flex-end;
   align-items:flex-end;
   padding-right:10vw;
+  position:relative;
+  top:-100px;
 `
 
 const IntroText = styled.p`
   font-family: 'Italiana', serif;
-  font-size:8rem;
+  font-size:7rem;
   color:${props=>props.color};
 `
 
