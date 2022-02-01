@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useState } from 'react';
 import { useTheme } from '../../utils/provider';
 import { themes, content_themes } from '../../utils/variables';
+import { device } from '../../utils/breakpoints';
 
 
 const Cont = styled.div`
@@ -17,8 +18,16 @@ const Cont = styled.div`
 
 const IntroText = styled.p`
   font-family: 'Italiana', serif;
-  font-size:7rem;
   color:${props=>props.color};
+  @media ${device.mobile} { 
+    font-size:4rem;
+  }
+  @media ${device.tablet} { 
+    font-size:5rem;
+  }
+  @media ${device.laptop} { 
+    font-size:7rem;
+  }
 `
 
 

@@ -4,7 +4,14 @@ import Cursor from '../comps/Cursor';
 import MouseContextProvider from '../utils/mousecontext';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { createGlobalStyle } from 'styled-components'
 
+const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family:"Porter";
+    src:url("/fonts/Porter/porter-sans-inline-block-webfont.ttf");
+  }
+`
 
 function MyApp({ Component, pageProps }) {
 
@@ -19,6 +26,7 @@ function MyApp({ Component, pageProps }) {
       </motion.div>
       <Component {...pageProps} />
     </MouseContextProvider>
+    <GlobalStyle/>
   </AppProvider>
 }
 

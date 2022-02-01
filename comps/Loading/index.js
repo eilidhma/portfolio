@@ -3,26 +3,50 @@ import { motion } from "framer-motion";
 import { useState } from 'react';
 import { useTheme } from '../../utils/provider';
 import { themes, content_themes } from '../../utils/variables';
+import { device } from '../../utils/breakpoints';
 
 const Cont = styled.div`
-display:flex;
-justify-content:flex-start;
-align-items:flex-start;
-width:100vw;
-margin-top:15vh;
-padding-left:8vw;
-padding-top:2rem;
+  display:flex;
+  align-items:center;
+  width:100vw;
+  @media ${device.mobile} { 
+    justify-content:center;
+    height:30vh;
+    padding-top:5rem;
+  }
+  @media ${device.tablet} { 
+    justify-content:flex-start;
+    padding-left:8vw;
+    padding-top:5rem;
+  }
+  @media ${device.laptop} { 
+    justify-content:flex-start;
+    padding-left:8vw;
+    padding-top:8rem;
+  }
 `
 
 const Hello = styled.div`
   display:flex;
   flex-direction:row;
+  font-family:'Porter';
+  margin:0;
 `
 
-const Letter = styled.div`
-  
+const Letter = styled.p`
+  margin:0;
+  font-family:'Porter', sans-serif;
+  color:${props=>props.color};
+  @media ${device.mobile} { 
+    font-size:2rem;
+  }
+  @media ${device.tablet} { 
+    font-size:5rem;
+  }
+  @media ${device.laptop} { 
+    font-size:7rem;
+  }
 `
-
 
 const Loading = ({}) => {
 
@@ -42,9 +66,7 @@ const Loading = ({}) => {
         animate={{x:0, y:0}}
         transition={{ duration: 0.5, delay:1 }}
       >
-        <svg width="9vw" viewBox="0 0 142 128" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M105.3 100.75V61H21.6V100.75H12.45V12.25H21.6V52H105.3V12.25H114.6V100.75H105.3ZM123 109.15V3.84999H96.9V43.75H30V3.84999H4.05V109.15H30V69.25H96.9V109.15H123ZM48.3 40H93.15V0.0999984H126.75L141.3 15.55V127.45H108.6L93.15 112.9V87.55H48.3V127.45H15.75L0.3 112.9V0.0999984H33.75L48.3 15.55V40Z" fill={content_themes[theme].color}/>
-        </svg>
+        <Letter color={content_themes[theme].color}>H</Letter>
       </motion.div>
      </motion.div>
 
@@ -59,9 +81,7 @@ const Loading = ({}) => {
         animate={{x:0, y:0}}
         transition={{ duration: 0.5, delay:1.2 }}
       >
-        <svg width="9vw" viewBox="0 0 141 128" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M21.6 52H97.95V61H21.6V91.6H113.55V100.75H12.3V12.25H113.4V21.4H21.6V52ZM29.85 29.8H121.8V3.84999H3.9V109.15H121.95V83.2H29.85V69.25H106.2V43.75H29.85V29.8ZM0.15 112.9V0.0999984H125.55L140.1 15.55V48.1H117.15L124.5 55.45V79.45L140.25 94.9V127.45H15.6L0.15 112.9Z" fill={content_themes[theme].color}/>
-        </svg>
+        <Letter color={content_themes[theme].color}>E</Letter>
       </motion.div>
      </motion.div>
     
@@ -76,9 +96,7 @@ const Loading = ({}) => {
         animate={{x:0, y:0}}
         transition={{ duration: 0.5, delay:1.4 }}
       >
-        <svg width="9vw" viewBox="0 0 134 128" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12.85 12.25H21.85V91.6H106.6V100.75H12.85V12.25ZM4.6 109.15H114.85V83.2H30.25V3.84999H4.6V109.15ZM0.85 0.0999984H34L48.55 15.55V79.45H118.6L133.15 94.9V127.45H16.3L0.85 112.9V0.0999984Z" fill={content_themes[theme].color}/>
-        </svg>
+        <Letter color={content_themes[theme].color}>L</Letter>
       </motion.div>
      </motion.div>
 
@@ -93,9 +111,7 @@ const Loading = ({}) => {
         animate={{x:0, y:0}}
         transition={{ duration: 0.5, delay:1.6 }}
       >
-        <svg width="9vw" viewBox="0 0 134 128" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12.85 12.25H21.85V91.6H106.6V100.75H12.85V12.25ZM4.6 109.15H114.85V83.2H30.25V3.84999H4.6V109.15ZM0.85 0.0999984H34L48.55 15.55V79.45H118.6L133.15 94.9V127.45H16.3L0.85 112.9V0.0999984Z" fill={content_themes[theme].color}/>
-        </svg>
+       <Letter color={content_themes[theme].color}>L</Letter>
       </motion.div>
     </motion.div>
 
@@ -110,9 +126,7 @@ const Loading = ({}) => {
         animate={{x:0, y:0}}
         transition={{ duration: 0.5, delay:1.8 }}
       >
-      <svg width="10.5vw" viewBox="0 0 158 128" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M80.05 91.6C85.85 91.6 91.25 91 96.25 89.8C101.35 88.5 105.75 86.5 109.45 83.8C113.25 81 116.2 77.4 118.3 73C120.4 68.5 121.45 63 121.45 56.5C121.45 50.1 120.35 44.65 118.15 40.15C116.05 35.65 113.15 32.05 109.45 29.35C105.75 26.55 101.35 24.55 96.25 23.35C91.25 22.05 85.85 21.4 80.05 21.4H63.55C57.65 21.4 52.15 22.05 47.05 23.35C42.05 24.55 37.7 26.55 34 29.35C30.3 32.05 27.35 35.65 25.15 40.15C23.05 44.65 22 50.1 22 56.5C22 63 23.05 68.5 25.15 73C27.35 77.4 30.3 81 34 83.8C37.7 86.6 42.05 88.6 47.05 89.8C52.15 91 57.65 91.6 63.55 91.6H80.05ZM63.55 83.2C59.05 83.2 54.8 82.75 50.8 81.85C46.8 80.95 43.3 79.5 40.3 77.5C37.3 75.4 34.9 72.65 33.1 69.25C31.3 65.85 30.4 61.6 30.4 56.5C30.4 51.5 31.3 47.3 33.1 43.9C34.9 40.5 37.3 37.75 40.3 35.65C43.4 33.55 46.95 32.05 50.95 31.15C54.95 30.25 59.15 29.8 63.55 29.8H80.05C84.45 29.8 88.65 30.25 92.65 31.15C96.65 32.05 100.15 33.55 103.15 35.65C106.15 37.75 108.55 40.5 110.35 43.9C112.15 47.3 113.05 51.5 113.05 56.5C113.05 61.5 112.15 65.7 110.35 69.1C108.65 72.5 106.3 75.25 103.3 77.35C100.3 79.45 96.8 80.95 92.8 81.85C88.8 82.75 84.55 83.2 80.05 83.2H63.55ZM12.55 56.5C12.55 48.4 13.8 41.55 16.3 35.95C18.9 30.35 22.45 25.8 26.95 22.3C31.55 18.7 36.95 16.15 43.15 14.65C49.45 13.05 56.25 12.25 63.55 12.25H80.05C87.35 12.25 94.1 13.05 100.3 14.65C106.5 16.25 111.85 18.8 116.35 22.3C120.95 25.8 124.5 30.35 127 35.95C129.6 41.55 130.9 48.4 130.9 56.5C130.9 64.6 129.6 71.45 127 77.05C124.5 82.65 120.95 87.2 116.35 90.7C111.85 94.2 106.5 96.75 100.3 98.35C94.1 99.95 87.35 100.75 80.05 100.75H63.55C56.25 100.75 49.45 100 43.15 98.5C36.95 96.9 31.55 94.35 26.95 90.85C22.45 87.25 18.9 82.65 16.3 77.05C13.8 71.45 12.55 64.6 12.55 56.5ZM4.15 56.5C4.15 66 5.6 74.1 8.5 80.8C11.5 87.4 15.6 92.8 20.8 97C26.1 101.2 32.35 104.3 39.55 106.3C46.85 108.2 54.85 109.15 63.55 109.15H80.05C88.75 109.15 96.7 108.2 103.9 106.3C111.1 104.3 117.3 101.2 122.5 97C127.8 92.8 131.9 87.4 134.8 80.8C137.7 74.1 139.15 66 139.15 56.5C139.15 47 137.7 38.95 134.8 32.35C131.9 25.65 127.8 20.2 122.5 16C117.3 11.8 111.1 8.74999 103.9 6.84999C96.7 4.84999 88.75 3.84999 80.05 3.84999H63.55C54.85 3.84999 46.85 4.84999 39.55 6.84999C32.35 8.74999 26.1 11.8 20.8 16C15.6 20.2 11.5 25.65 8.5 32.35C5.6 38.95 4.15 47 4.15 56.5ZM0.4 56.5C0.4 46.3 1.95 37.65 5.05 30.55C8.15 23.35 12.5 17.5 18.1 13C23.7 8.49999 30.35 5.24999 38.05 3.24999C45.85 1.15 54.35 0.0999984 63.55 0.0999984H80.05C85.85 0.0999984 91.3 0.449997 96.4 1.14999C101.6 1.74999 106.7 3.09999 111.7 5.2C116.7 7.19999 121.65 10.1 126.55 13.9C131.55 17.6 136.7 22.6 142 28.9C146.5 33.4 150.2 39.35 153.1 46.75C156 54.15 157.45 62.4 157.45 71.5C157.45 81.6 155.9 90.2 152.8 97.3C149.8 104.4 145.5 110.15 139.9 114.55C134.4 119.05 127.8 122.3 120.1 124.3C112.5 126.4 104.15 127.45 95.05 127.45H78.55C68.35 127.45 58.85 126.3 50.05 124C41.25 121.7 34 117.75 28.3 112.15C22.6 107.15 17.95 102.45 14.35 98.05C10.75 93.55 7.9 89.1 5.8 84.7C3.8 80.3 2.4 75.8 1.6 71.2C0.8 66.6 0.4 61.7 0.4 56.5ZM80.05 79.45C83.95 79.45 87.65 79.1 91.15 78.4C94.75 77.6 97.9 76.3 100.6 74.5C103.3 72.7 105.4 70.35 106.9 67.45C108.5 64.45 109.3 60.8 109.3 56.5C109.3 54.1 109 51.9 108.4 49.9C104.3 48.7 99.85 48.1 95.05 48.1H78.55C74.55 48.1 70.75 48.5 67.15 49.3C63.55 50.1 60.35 51.4 57.55 53.2C54.85 55 52.7 57.4 51.1 60.4C49.5 63.4 48.7 67.1 48.7 71.5C48.7 73.9 48.9 75.9 49.3 77.5C51.4 78.2 53.65 78.7 56.05 79C58.45 79.3 60.95 79.45 63.55 79.45H80.05Z" fill={content_themes[theme].color}/>
-      </svg>
+      <Letter color={content_themes[theme].color}>O</Letter>
       </motion.div>
     </motion.div>
    </Hello>

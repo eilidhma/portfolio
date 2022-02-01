@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import * as Scroll from 'react-scroll';
+import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import styled from "styled-components";
 import Loading from "../comps/Loading";
 import NavBar from "../comps/NavBar";
@@ -19,6 +21,7 @@ import Contact from "../comps/Contact";
 import ContactForm from "../comps/ContactForm";
 import SaveThePlate from "../comps/SaveThePlate";
 import Garden from "../comps/Garden";
+import Contendr from "../comps/Contendr";
 
 export default function Home() {
 
@@ -30,6 +33,7 @@ export default function Home() {
 
   const [dev, setDev] = useState(false)
   const [garden, setGarden] = useState(false)
+  const [contendr, setContendr] = useState(false)
 
   return (
     <div>
@@ -45,7 +49,22 @@ export default function Home() {
         BackArrow={()=>{
           setDev(true);
           setGarden(false);
+        }}
+        NextArrow={()=>{
+          setGarden(false);
+          setContendr(true);
         }}/>}
+        {contendr === true && <Contendr 
+        Back={()=>{setContendr(false)}}
+        BackArrow={()=>{
+          setGarden(true);
+          setContendr(false);
+        }}
+        NextArrow={()=>{
+          setDev(true);
+          setContendr(false);
+        }}
+        />}
       <NavBar />
       <Social />
       <NavDots />
@@ -65,7 +84,7 @@ export default function Home() {
       </SectionCont>
       <SectionCont>
         <Work />
-        <WorkCont onClickGarden={()=>{setGarden(true)}} onClickSaveThePlate={()=>{setDev(true)}}/>
+        <WorkCont onClickContendr={()=>{setContendr(true)}} onClickGarden={()=>{setGarden(true)}} onClickSaveThePlate={()=>{setDev(true)}}/>
       </SectionCont>
       <SectionCont>
         <Contact />

@@ -110,12 +110,12 @@ const Previous = styled.div`
   left:10vw;
 `
 
-const Garden = ({
-  title='Garden',
+const Contendr = ({
+  title='Contendr Marketing Site',
   Back=()=>{},
   BackArrow=()=>{},
   NextArrow=()=>{},
-  src='garden.png'
+  src='contendr.png'
 }) => {
 
   const {theme, setTheme} = useTheme();
@@ -132,13 +132,12 @@ const Garden = ({
 
           <Left>
             <SubTitle color={content_themes[theme].color}>
-            • Lead developer for an interactive and educational web app project <br></br><br></br>
-            • Responsibilities included project ideation and design, front-end development, and animation<br></br><br></br>
+            • Developer and designer for an interdisciplinary social media application <br></br><br></br>
             • Created with Next JS
             </SubTitle>
           </Left>
           <Right>
-          <Button target='_blank' href='https://garden-six.vercel.app/' color={content_themes[theme].color} background={themes[theme].body}>View Project</Button>
+          <Button target='_blank' href='https://contendr-three.vercel.app/' color={content_themes[theme].color} background={themes[theme].body}>View Project</Button>
             <img width={500} src={src}/>
           </Right>
         <Previous onClick={BackArrow}>
@@ -152,4 +151,4 @@ const Garden = ({
   </Wrapper>
 }
 
-export default Garden;
+export default Contendr;

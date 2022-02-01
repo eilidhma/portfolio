@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import { motion } from "framer-motion";
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useTheme } from '../../utils/provider';
 import { themes, content_themes } from '../../utils/variables';
+import { MouseContext } from '../../utils/mousecontext';
+
 
 const Cont = styled.div`
   display:flex;
@@ -58,17 +60,39 @@ const Text = styled.p`
 
 const WorkCont = ({
   onClickSaveThePlate = () => {},
-  onClickGarden = () => {}
+  onClickGarden = () => {},
+  onClickContendr = () => {}
 }) => {
 
   const {theme, setTheme} = useTheme();
-  const [on, setOn] = useState(true)
+  const [on, setOn] = useState(true);
+  const { cursorType, cursorChangeHandler } = useContext(MouseContext);
+
 
   return <Cont>
     <LeftSection>
       <Title color={content_themes[theme].color}>2.1 Development</Title>
-      <Text color={content_themes[theme].color} onClick={onClickSaveThePlate} style={{textAlign:'right'}}>SaveThePlate</Text>
-      <Text color={content_themes[theme].color} onClick={onClickGarden} style={{textAlign:'right'}}>Garden</Text>
+      <Text className='work' onMouseEnter={() => cursorChangeHandler("hovered")}
+      onMouseLeave={() => cursorChangeHandler("")} 
+      color={content_themes[theme].color} 
+      onClick={onClickSaveThePlate} 
+      style={{textAlign:'right'}}>
+        SaveThePlate
+        </Text>
+      <Text className='work' onMouseEnter={() => cursorChangeHandler("hovered")}
+      onMouseLeave={() => cursorChangeHandler("")} 
+      color={content_themes[theme].color} 
+      onClick={onClickGarden} 
+      style={{textAlign:'right'}}>
+        Garden
+      </Text>
+      <Text className='work' onMouseEnter={() => cursorChangeHandler("hovered")}
+      onMouseLeave={() => cursorChangeHandler("")} 
+      color={content_themes[theme].color} 
+      onClick={onClickContendr} 
+      style={{textAlign:'right'}}>
+        Contendr Website
+      </Text>
     </LeftSection>
     <Line color={content_themes[theme].color}></Line>
     <RightSection>
