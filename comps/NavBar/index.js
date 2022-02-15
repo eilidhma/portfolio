@@ -6,6 +6,7 @@ import { themes, content_themes } from '../../utils/variables';
 import { BsDot } from 'react-icons/bs';
 import { MouseContext } from '../../utils/mousecontext';
 import { debounce } from '../../utils/debounce';
+import { Link } from 'react-scroll';
 
 const NavCont = styled.div`
 background-color:${props=>props.color};
@@ -48,6 +49,7 @@ const SectionsCont = styled.div`
   justify-content:space-around;
   align-items:center;
   width:50vw;
+  color:${props=>props.color};
 `
 
 const Section = styled.a`
@@ -57,7 +59,6 @@ const Section = styled.a`
   font-family: 'Poppins', sans-serif;
   font-weight:300;
   font-size:1rem;
-  color:${props=>props.color};
 `
 
 const NavBar = ({
@@ -115,31 +116,71 @@ const NavBar = ({
         </svg>
         <text style={{color:content_themes[theme].color}}>{"<"}Ay<BsDot style={{paddingTop:5, marginLeft:-5, marginRight:-5}}/>lee{"/>"}</text>
       </LogoCont>
-      <SectionsCont>
-        <Section 
+      <SectionsCont
+      color={content_themes[theme].color}>
+        <Link 
+        to="about" 
+        spy={true} 
+        smooth={true} 
+        offset={-100} 
+        duration={500}
+        style={{
+          display:'flex',
+          flexDirection:'column',
+          textDecoration:'none',
+          fontFamily: 'Poppins, sans-serif',
+          fontWeight:300,
+          fontSize:'1rem'
+        }}
         onMouseEnter={() => cursorChangeHandler("hovered")}
         onMouseLeave={() => cursorChangeHandler("")} 
         className='nav' 
         color={content_themes[theme].color}>
           <text>1.0</text>
           <text>About</text>
-        </Section>
-        <Section 
+        </Link>
+        <Link 
+        to="work" 
+        spy={true} 
+        smooth={true} 
+        offset={-40} 
+        duration={500}
+        style={{
+          display:'flex',
+          flexDirection:'column',
+          textDecoration:'none',
+          fontFamily: 'Poppins, sans-serif',
+          fontWeight:300,
+          fontSize:'1rem'
+        }}
         onMouseEnter={() => cursorChangeHandler("hovered")}
         onMouseLeave={() => cursorChangeHandler("")} 
         className='nav' 
         color={content_themes[theme].color}>
           <text>2.0</text>
           <text>Work</text>
-        </Section>
-        <Section 
+        </Link>
+        <Link 
+        to="contact" 
+        spy={true} 
+        smooth={true} 
+        offset={50} 
+        duration={500}
+        style={{
+          display:'flex',
+          flexDirection:'column',
+          textDecoration:'none',
+          fontFamily: 'Poppins, sans-serif',
+          fontWeight:300,
+          fontSize:'1rem'
+        }}
         onMouseEnter={() => cursorChangeHandler("hovered")}
         onMouseLeave={() => cursorChangeHandler("")} 
         className='nav' 
         color={content_themes[theme].color}>
           <text>3.0</text>
           <text>Contact</text>
-        </Section>
+        </Link>
       </SectionsCont>
       <div className='darkmode' style={{zIndex:101}} onClick={handleDarkMode}
       onMouseEnter={() => cursorChangeHandler("hovered")}

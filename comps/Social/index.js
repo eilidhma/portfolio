@@ -4,7 +4,8 @@ import { useState } from 'react';
 import { useTheme } from '../../utils/provider';
 import { themes, content_themes } from '../../utils/variables';
 import { AiFillGithub, AiOutlineInstagram } from 'react-icons/ai'
-import { RiLinkedinFill } from 'react-icons/ri'
+import { RiLinkedinFill } from 'react-icons/ri';
+import { device } from '../../utils/breakpoints';
 
 const Cont = styled.div`
   position:fixed;
@@ -16,6 +17,42 @@ const Cont = styled.div`
   padding-left:30px;
   padding-right:30px;
   height:100%;
+  @media ${device.mobile} { 
+    display:none;
+  }
+  @media ${device.tablet} { 
+    position:fixed;
+    top:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding-left:30px;
+    padding-right:30px;
+    height:100%;
+  }
+  @media ${device.laptop} { 
+    position:fixed;
+    top:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding-left:30px;
+    padding-right:30px;
+    height:100%;
+  }
+  @media ${device.desktop} { 
+    position:fixed;
+    top:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding-left:30px;
+    padding-right:30px;
+    height:100%;
+  }
 `
 
 const Icons = styled.div`

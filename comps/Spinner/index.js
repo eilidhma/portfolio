@@ -22,6 +22,8 @@ const Spinner = ({
 
   const {theme, setTheme} = useTheme();
 
+  let size = '200px'
+
   const variants = {
     default: { rotate: 0 },
     dark: { rotate: 180 }
@@ -39,7 +41,7 @@ const Spinner = ({
         animate={{ rotate: 360 }}
         transition={{ repeat: Infinity, duration: 3, ease:'linear'  }}
         style={{position:'absolute'}}        >
-        <svg width="200" height="200" viewBox="0 0 210 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width={size} height="200" viewBox="0 0 210 210" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="170.708" cy="66.5924" r="3.5" transform="rotate(120 170.708 66.5924)" fill={content_themes[theme].color}/>
           <circle cx="104.708" cy="180.908" r="3.5" transform="rotate(120 104.708 180.908)" fill={content_themes[theme].color}/>
           <circle cx="38.9811" cy="66.75" r="3.5" transform="rotate(120 38.9811 66.75)" fill={content_themes[theme].color}/>

@@ -22,6 +22,7 @@ import ContactForm from "../comps/ContactForm";
 import SaveThePlate from "../comps/SaveThePlate";
 import Garden from "../comps/Garden";
 import Contendr from "../comps/Contendr";
+import Footer from "../comps/Footer";
 
 export default function Home() {
 
@@ -68,27 +69,30 @@ export default function Home() {
       <NavBar />
       <Social />
       <NavDots />
-      <SectionCont>
-        <Loading />
-        <Intro line1="My name" line2="is Eilidh"/>
-        <Spinner /> 
-      </SectionCont>
-      <SectionCont>
-        <Title />
-        <Girl />
-      </SectionCont>
-      <SectionCont>
+      <div id="intro">
+        <SectionCont>
+          <Loading />
+          <Intro line1="My name" line2="is Eilidh"/>
+          <Spinner /> 
+        </SectionCont>
+        <SectionCont>
+          <Title />
+          <Girl />
+        </SectionCont>
+      </div>
+      <SectionCont id="about">
         <About />
         <Text />
         <Tools />
       </SectionCont>
-      <SectionCont>
+      <SectionCont id="work">
         <Work />
         <WorkCont onClickContendr={()=>{setContendr(true)}} onClickGarden={()=>{setGarden(true)}} onClickSaveThePlate={()=>{setDev(true)}}/>
       </SectionCont>
-      <SectionCont>
+      <SectionCont id="contact">
         <Contact />
         <ContactForm />
+        <Footer />
       </SectionCont>
     </div>
   )

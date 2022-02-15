@@ -7,6 +7,15 @@ import { device } from '../../utils/breakpoints';
 
 
 const Cont = styled.div`
+@media ${device.mobile} { 
+  display:flex;
+  width:100vw;
+  justify-content:flex-start;
+  align-items:flex-end;
+  position:relative;
+  top:-30px;
+}
+@media ${device.tablet} { 
   display:flex;
   width:100vw;
   justify-content:flex-end;
@@ -14,6 +23,25 @@ const Cont = styled.div`
   padding-right:10vw;
   position:relative;
   top:-100px;
+}
+@media ${device.laptop} { 
+  display:flex;
+  width:100vw;
+  justify-content:flex-end;
+  align-items:flex-end;
+  padding-right:10vw;
+  position:relative;
+  top:-100px;
+}
+@media ${device.desktop} { 
+  display:flex;
+  width:100vw;
+  justify-content:flex-end;
+  align-items:flex-end;
+  padding-right:10vw;
+  position:relative;
+  top:-100px;
+}
 `
 
 const IntroText = styled.p`
@@ -26,6 +54,9 @@ const IntroText = styled.p`
     font-size:5rem;
   }
   @media ${device.laptop} { 
+    font-size:7rem;
+  }
+  @media ${device.desktop} { 
     font-size:7rem;
   }
 `
