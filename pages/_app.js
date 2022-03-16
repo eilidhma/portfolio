@@ -5,6 +5,8 @@ import MouseContextProvider from '../utils/mousecontext';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { createGlobalStyle } from 'styled-components'
+import Head from 'next/head';
+
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -16,6 +18,12 @@ const GlobalStyle = createGlobalStyle`
 function MyApp({ Component, pageProps }) {
 
   return <AppProvider>
+    {/* <Head>
+      <meta>
+        <title>Eilidh Morrice-Ashdown frontend development UI UX design portfolio, BCIT D3 Program 2022</title>
+        <description>This portfolio site offers an overview of my projects in frontend and backend web and app development, UI/UX design, and graphic design. Eilidh Morrice-Ashdown finished the Digital Design and Development program at BCIT in 2022. </description>
+      </meta>
+    </Head> */}
     <MouseContextProvider>
       <motion.div
       initial={{opacity:0}}

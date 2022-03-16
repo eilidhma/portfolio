@@ -76,7 +76,7 @@ const Intro = ({
         initial={{opacity:0}}
         animate={{opacity:1}}
         transition={{ duration: 1, delay:2 }}
-        style={{padding:20}}
+        style={{paddingRight:20}}
       >
         <IntroText color={content_themes[theme].color}>
         {line1} <br/>{line2} 

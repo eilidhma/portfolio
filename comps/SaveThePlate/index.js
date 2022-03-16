@@ -12,10 +12,7 @@ const Wrapper = styled.div`
   justify-content:center;
   align-items:center;
   width:100vw;
-  z-index:299;
-  position:fixed;
-  top:0;
-  background-color:rgba(0,0,0,0.8);
+  height: 100vh;
 `
 
 const Cont = styled.div`
@@ -26,7 +23,6 @@ const Cont = styled.div`
   width:80vw;
   background-color:${props=>props.background};
   padding-bottom:100px;
-  z-index:300;
 `
 
 const SubCont = styled.div`
@@ -57,6 +53,7 @@ const Right = styled.div`
 `
 
 const Title = styled.p`
+  margin-top: 170px;
   font-family: 'Italiana', serif;
   font-size:2rem;
   color:${props=>props.color};
@@ -133,9 +130,6 @@ const SaveThePlate = ({
         <Title color={content_themes[theme].color}>
           {title}
         </Title>
-        <BackButton onClick={Back} color={content_themes[theme].color} background={themes[theme].body}>
-          <AiOutlineClose color={content_themes[theme].color}/>
-        </BackButton>
         <SubCont>
           <Left>
             <SubTitle color={content_themes[theme].color}>
@@ -144,7 +138,7 @@ const SaveThePlate = ({
             • Developed with React Native, PHP, MySQL, and Firebase<br></br><br></br>
             <Button target='_blank' href='https://github.com/eilidhma/save-the-plate' color={content_themes[theme].color} background={themes[theme].body}>Source Code</Button>
             </SubTitle>
-            <img width={300} src='savetheplate.png'/>
+            <img width={800} src='savetheplate.png'/>
           </Left>
           <Right>
             <Gif>
@@ -153,12 +147,6 @@ const SaveThePlate = ({
             </Gif>
           </Right>
         </SubCont>
-        <Next onClick={NextArrow}>
-          <AiOutlineRight color={content_themes[theme].color} size={30}/>
-        </Next>
-        {/* <Previous>
-          <AiOutlineLeft color={content_themes[theme].color} size={30}/>
-        </Previous> */}
       </Cont>
 
   </Wrapper>

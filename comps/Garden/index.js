@@ -11,10 +11,7 @@ const Wrapper = styled.div`
   justify-content:center;
   align-items:center;
   width:100vw;
-  z-index:299;
-  position:fixed;
-  top:0;
-  background-color:rgba(0,0,0,0.8);
+  height: 100vh;
 `
 
 const Cont = styled.div`
@@ -25,7 +22,6 @@ const Cont = styled.div`
   width:80vw;
   background-color:${props=>props.background};
   padding-bottom:100px;
-  z-index:300;
 `
 
 const SubCont = styled.div`
@@ -92,23 +88,6 @@ const BackButton = styled.button`
   border:none;
 `
 
-const Next = styled.div`
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  position:absolute;
-  top:50%;
-  right:10vw;
-`
-
-const Previous = styled.div`
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  position:absolute;
-  top:50%;
-  left:10vw;
-`
 
 const Garden = ({
   title='Garden',
@@ -126,9 +105,6 @@ const Garden = ({
         <Title color={content_themes[theme].color}>
           {title}
         </Title>
-        <BackButton onClick={Back} color={content_themes[theme].color} background={themes[theme].body}>
-          <AiOutlineClose color={content_themes[theme].color}/>
-        </BackButton>
 
           <Left>
             <SubTitle color={content_themes[theme].color}>
@@ -139,14 +115,8 @@ const Garden = ({
           </Left>
           <Right>
           <Button target='_blank' href='https://garden-six.vercel.app/' color={content_themes[theme].color} background={themes[theme].body}>View Project</Button>
-            <img width={500} src={src}/>
+            <img width={1000} src={src}/>
           </Right>
-        <Previous onClick={BackArrow}>
-          <AiOutlineLeft color={content_themes[theme].color} size={30}/>
-        </Previous>
-        <Next onClick={NextArrow}>
-          <AiOutlineRight color={content_themes[theme].color} size={30}/>
-        </Next>
       </Cont>
 
   </Wrapper>

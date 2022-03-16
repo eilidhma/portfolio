@@ -11,10 +11,7 @@ const Wrapper = styled.div`
   justify-content:center;
   align-items:center;
   width:100vw;
-  z-index:299;
-  position:fixed;
-  top:0;
-  background-color:rgba(0,0,0,0.8);
+  height: 100vh;
 `
 
 const Cont = styled.div`
@@ -126,9 +123,6 @@ const Contendr = ({
         <Title color={content_themes[theme].color}>
           {title}
         </Title>
-        <BackButton onClick={Back} color={content_themes[theme].color} background={themes[theme].body}>
-          <AiOutlineClose color={content_themes[theme].color}/>
-        </BackButton>
 
           <Left>
             <SubTitle color={content_themes[theme].color}>
@@ -138,14 +132,8 @@ const Contendr = ({
           </Left>
           <Right>
           <Button target='_blank' href='https://contendr-three.vercel.app/' color={content_themes[theme].color} background={themes[theme].body}>View Project</Button>
-            <img width={500} src={src}/>
+            <img width={800} src={src}/>
           </Right>
-        <Previous onClick={BackArrow}>
-          <AiOutlineLeft color={content_themes[theme].color} size={30}/>
-        </Previous>
-        <Next onClick={NextArrow}>
-          <AiOutlineRight color={content_themes[theme].color} size={30}/>
-        </Next>
       </Cont>
 
   </Wrapper>

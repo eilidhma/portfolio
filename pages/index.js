@@ -30,42 +30,11 @@ export default function Home() {
     display:flex;
     flex-direction:column;
     width:100vw;
+    min-height: 100vh;
   `
-
-  const [dev, setDev] = useState(false)
-  const [garden, setGarden] = useState(false)
-  const [contendr, setContendr] = useState(false)
 
   return (
     <div>
-        {dev === true && <SaveThePlate 
-        Back={()=>{setDev(false)}}
-        NextArrow={()=>{
-          setDev(false);
-          setGarden(true);
-        }}
-        />}
-        {garden === true && <Garden 
-        Back={()=>{setGarden(false)}}
-        BackArrow={()=>{
-          setDev(true);
-          setGarden(false);
-        }}
-        NextArrow={()=>{
-          setGarden(false);
-          setContendr(true);
-        }}/>}
-        {contendr === true && <Contendr 
-        Back={()=>{setContendr(false)}}
-        BackArrow={()=>{
-          setGarden(true);
-          setContendr(false);
-        }}
-        NextArrow={()=>{
-          setDev(true);
-          setContendr(false);
-        }}
-        />}
       <NavBar />
       <Social />
       <NavDots />
@@ -74,26 +43,25 @@ export default function Home() {
           <Loading />
           <Intro line1="My name" line2="is Eilidh"/>
           <Spinner /> 
+          <Text />
+          <Footer />
         </SectionCont>
-        <SectionCont>
+        {/* <SectionCont>
           <Title />
           <Girl />
-        </SectionCont>
+        </SectionCont> */}
       </div>
-      <SectionCont id="about">
+      {/* <SectionCont id="about">
         <About />
-        <Text />
-        <Tools />
-      </SectionCont>
-      <SectionCont id="work">
+      </SectionCont> */}
+      {/* <SectionCont id="work">
         <Work />
         <WorkCont onClickContendr={()=>{setContendr(true)}} onClickGarden={()=>{setGarden(true)}} onClickSaveThePlate={()=>{setDev(true)}}/>
       </SectionCont>
       <SectionCont id="contact">
         <Contact />
         <ContactForm />
-        <Footer />
-      </SectionCont>
+      </SectionCont> */}
     </div>
   )
 }
