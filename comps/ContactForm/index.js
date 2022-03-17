@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import { motion } from "framer-motion";
-import { useState, useContext } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import { useTheme } from '../../utils/provider';
 import { themes, content_themes } from '../../utils/variables';
 import { MouseContext } from '../../utils/mousecontext';
 import { debounce } from '../../utils/debounce';
 import { useForm } from "react-hook-form";
+import emailjs from '@emailjs/browser';
 
 const Cont = styled.div`
   display:flex;
@@ -59,7 +60,7 @@ const TextArea = styled.textarea`
   resize:none;
 `
 
-const Submit = styled.button`
+const Submit = styled.input`
   font-family: 'Italiana', serif;
   font-size:1.2rem;
   background-color:${props=>props.background};
@@ -69,39 +70,39 @@ const Submit = styled.button`
   margin-top:50px;
 `
 
-const ContactForm = ({
-  color='black',
-  background='white'
-}) => {
+const ContactForm = ({}) => {
 
   const {theme, setTheme} = useTheme();
 
   const { cursorType, cursorChangeHandler } = useContext(MouseContext);
 
-  const { reset } = useForm();
+  const form = useRef();
 
-  async function handleOnSubmit(e){
+  const sendEmail = (e) => {
     e.preventDefault();
-    const formData = {}
-    Array.from(e.currentTarget.elements).forEach(field => {
-      if(!field.name) return;
-      formData[field.name] = field.value;
-    });
-    fetch('./api/mail', {
-      method:'post',
-      body: JSON.stringify(formData)
-    })
-  }
+
+    emailjs.sendForm('service_mj0oxtr', 'template_mo1amod', form.current, 'Zv4txRxGpVFL5PPpK')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+
+      e.target.reset()
+      alert('sent!')
+      
+  };
+
   return <Cont>
-        <form method="post" onSubmit={handleOnSubmit}>
+        <form ref={form} onSubmit={sendEmail}>
         <Title color={content_themes[theme].color}>Let's connect.</Title>
         <Section>
           <Label color={content_themes[theme].color} htmlFor="name">Name:</Label>
-          <Input type='text' name="name" background={themes[theme].body} color={content_themes[theme].color}/>
+          <Input type='text' name="from_name" background={themes[theme].body} color={content_themes[theme].color}/>
         </Section>
         <Section>
           <Label color={content_themes[theme].color} htmlFor="email">Email:</Label>
-          <Input type='email' name="email" background={themes[theme].body} color={content_themes[theme].color}/>
+          <Input type='email' name="from_email" background={themes[theme].body} color={content_themes[theme].color}/>
         </Section>
         <Section>
           <Label color={content_themes[theme].color} htmlFor="message">Message:</Label>
@@ -109,15 +110,17 @@ const ContactForm = ({
         </Section>
         <Section>
           <Submit 
+          type={"submit"}
+          value={"Send"}
           background={themes[theme].body} 
           color={content_themes[theme].color}
           onMouseEnter={() => cursorChangeHandler("hovered")}
-          onMouseLeave={() => cursorChangeHandler("")} >
-            Submit
-          </Submit>
+          onMouseLeave={() => cursorChangeHandler("")} />
         </Section>
       </form>
     </Cont>
+
+    
 }
 
 export default ContactForm;

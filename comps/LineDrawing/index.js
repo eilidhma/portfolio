@@ -90,48 +90,7 @@ const Cont = styled.div`
 }
 `
 
-const AboutText = styled.div`
-@media ${device.mobile}{
-  display: flex;
-  justify-content:center;
-  align-items:center;
-  width:100%;
-  height:50vh;
-}
-@media ${device.tablet}{
-  display: flex;
-  justify-content:center;
-  align-items:center;
-  width:100%;
-  height:50vh;
-}
-@media ${device.laptop}{
-  display: flex;
-  justify-content:center;
-  align-items:flex-start;
-  width:50%;
-  height:80vh;
-  padding-top:20vh;
-  font-family: 'Italiana', serif;
-  font-weight:300;
-  font-size:1.5rem;
-}
-@media ${device.desktop}{
-  display: flex;
-  justify-content:center;
-  align-items:center;
-  width:50%;
-  height:80vh;
-  padding-top:20vh;
-  font-family: 'Italiana', serif;
-  font-weight:300;
-  font-size:1.5rem;
-}
-`
-
-const Line = styled.div``
-
-const Girl = ({}) => {
+const LineDrawing = ({}) => {
 
   const {theme, setTheme} = useTheme();
   const [isComplete, setIsComplete] = useState(false);
@@ -141,18 +100,8 @@ const Girl = ({}) => {
 
   useEffect(() => ySpace.onChange(x => setIsComplete(x >= 1)), [ySpace]);
 
-  return <Wrapper>
-    <AboutText>
-    In my spare time, you can find me occupying local thrift shops, attempting to master the acoustic guitar, or taking photos of my dogs in cute hats.
-    <br></br>
-    In my spare time, you can find me occupying local thrift shops, attempting to master the acoustic guitar, or taking photos of my dogs in cute hats.
-    <br></br>
-    In my spare time, you can find me occupying local thrift shops, attempting to master the acoustic guitar, or taking photos of my dogs in cute hats.
-    <br></br>
-    In my spare time, you can find me occupying local thrift shops, attempting to master the acoustic guitar, or taking photos of my dogs in cute hats.
-    </AboutText>
-    <Cont>
-      {/* <svg width="80%" height="402" viewBox="0 0 574 402" fill="none" xmlns="http://www.w3.org/2000/svg">
+  return <Cont>
+      <svg width="80%" height="402" viewBox="0 0 574 402" fill="none" xmlns="http://www.w3.org/2000/svg">
           <motion.path 
           initial={{ pathLength: 0 }} 
           animate={{ pathLength: 1 }} 
@@ -166,13 +115,8 @@ const Girl = ({}) => {
             translateY: 5,
             scaleX: -1 // Reverse direction of line animation
           }}/>
-        </svg> */}
-        <Img>
-          <Imgs src={'me.JPG'} />
-        </Img>
+        </svg>
     </Cont>
-    
-  </Wrapper>
 }
 
-export default Girl;
+export default LineDrawing;
