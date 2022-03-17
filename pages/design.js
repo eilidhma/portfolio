@@ -52,7 +52,7 @@ export default function Des() {
       <SectionCont>
         <TitleCont>
             <Title>
-            Design. It's a lifestyle.</Title>
+            Design. Its a lifestyle.</Title>
         </TitleCont>
       </SectionCont>
         <Design 
