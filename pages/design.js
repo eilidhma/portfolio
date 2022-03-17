@@ -28,7 +28,7 @@ export default function Des() {
     margin:0;
     `
 
-    const Title = styled.p`
+    const Title = styled.h4`
     margin:0;
     font-family:'Porter', sans-serif;
     color:${props=>props.color};
@@ -51,7 +51,8 @@ export default function Des() {
       <NavDots />
       <SectionCont>
         <TitleCont>
-            <Title>Design.<br></br> It's a lifestyle.</Title>
+            <Title>
+            Design. It's a lifestyle.</Title>
         </TitleCont>
       </SectionCont>
         <Design 
