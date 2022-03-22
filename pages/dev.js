@@ -10,6 +10,7 @@ import SaveThePlate from "../comps/SaveThePlate";
 import Garden from "../comps/Garden";
 import Contendr from "../comps/Contendr";
 import Footer from "../comps/Footer";
+import Forage from "../comps/Forage";
 
 export default function Dev() {
 
@@ -29,6 +30,7 @@ export default function Dev() {
         <Title />
       </SectionCont>
       <SaveThePlate />
+      <Forage />
       <Garden />
       <Contendr />
       <Footer />
