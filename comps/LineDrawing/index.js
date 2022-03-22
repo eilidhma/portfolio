@@ -11,6 +11,7 @@ import { themes, content_themes } from '../../utils/variables';
 import { device } from '../../utils/breakpoints';
 import Image from 'next/image';
 import Me from '../../public/me.JPG'
+import Router, { useRouter } from 'next/router';
 
 const Wrapper = styled.div`
 width: 100%;
@@ -33,24 +34,31 @@ align-items: center;
 }
 `
 
-const Img = styled.div`
-  display: flex;
-  justify-content:center;
-  align-items:center;
-  width: 450px;
-  height: 450px;
-  border-radius:50%;
-  object-fit:cover;
+const Title = styled.p`
+  font-family: 'Italiana', serif;
+  font-size:2rem;
+  color:${props=>props.color};
 `
 
-const Imgs = styled.img`
+const ButCont = styled.div`
   display: flex;
-  justify-content:center;
-  align-items:center;
-  width: 450px;
-  height: 450px;
-  border-radius:50%;
-  object-fit:cover;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:50%;
+`
+
+const But = styled.button`
+  width:200px;
+  background-color:${props=>props.background};
+  font-family: 'Poppins', sans-serif;
+  font-weight:300;
+  font-size:1.2rem;
+  border:1px solid ${props=>props.color};
+  color:${props=>props.color};
+  padding:10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 `
 
 const Cont = styled.div`
@@ -72,10 +80,10 @@ const Cont = styled.div`
 }
 @media ${device.laptop} {
   display:flex;
-  justify-content:flex-end;
-  align-items:flex-end;
+  justify-content:center;
+  align-items:center;
   width:50%;
-  height:80vh;
+  height:30vh;
   padding-top:2rem;
   padding-right:5rem;
 }
@@ -84,7 +92,7 @@ const Cont = styled.div`
   justify-content:flex-end;
   align-items:flex-end;
   width:50%;
-  height:80vh;
+  height:30vh;
   padding-top:2rem;
   padding-right:5rem;
 }
@@ -95,12 +103,14 @@ const LineDrawing = ({}) => {
   const {theme, setTheme} = useTheme();
   const [isComplete, setIsComplete] = useState(false);
   const { scrollYProgress } = useViewportScroll();
-  const ySpace = useTransform(scrollYProgress, [0, 0.35], [0, 1]);
+  const ySpace = useTransform(scrollYProgress, [0, 0.85], [0, 1]);
   const pathLength = useSpring(ySpace, { stiffness: 400, damping: 90 });
+  const r = useRouter();
 
   useEffect(() => ySpace.onChange(x => setIsComplete(x >= 1)), [ySpace]);
 
-  return <Cont>
+  return <Wrapper>
+    <Cont>
       <svg width="80%" height="402" viewBox="0 0 574 402" fill="none" xmlns="http://www.w3.org/2000/svg">
           <motion.path 
           initial={{ pathLength: 0 }} 
@@ -117,6 +127,12 @@ const LineDrawing = ({}) => {
           }}/>
         </svg>
     </Cont>
+    <ButCont>
+      <Title color={content_themes[theme].color}>View My Work:</Title>
+      <But onClick={()=> r.push('/dev')} color={content_themes[theme].color} background={themes[theme].body}>Development</But>
+      <But onClick={()=> r.push('/design')} color={content_themes[theme].color} background={themes[theme].body}>Design</But>
+    </ButCont>
+    </Wrapper>
 }
 
 export default LineDrawing;

@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import { motion } from "framer-motion";
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useTheme } from '../../utils/provider';
 import { themes, content_themes } from '../../utils/variables';
 import { AiFillGithub, AiOutlineInstagram } from 'react-icons/ai'
 import { RiLinkedinFill } from 'react-icons/ri';
 import { device } from '../../utils/breakpoints';
+import { MouseContext } from '../../utils/mousecontext';
 
 const Cont = styled.div`
   position:fixed;
@@ -72,16 +73,24 @@ const Line = styled.div`
   border-radius:1px;
 `
 
+const Links = styled.a`
+
+`
+
 const Social = ({
   color='black'
 }) => {
 
   const {theme, setTheme} = useTheme();
 
+  const { cursorType, cursorChangeHandler } = useContext(MouseContext);
+
   const variants = {
     default: { rotate: 0 },
     dark: { rotate: 180 }
   }
+
+
 
 
   return <Cont>
@@ -92,9 +101,30 @@ const Social = ({
     style={{display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column'}}>
       <Line style={{backgroundColor:content_themes[theme].color}}/>
       <Icons>
-        <AiOutlineInstagram style={{marginBottom:20}} color={content_themes[theme].color} size={25}/>
-        <RiLinkedinFill style={{marginBottom:20}} color={content_themes[theme].color} size={25}/>
-        <AiFillGithub style={{marginBottom:20}} color={content_themes[theme].color} size={25}/>
+        <Links
+        onMouseEnter={() => cursorChangeHandler("hovered")}
+        onMouseLeave={() => cursorChangeHandler("")} 
+        target='_blank' 
+        className='social'
+        href="https://www.instagram.com/eilidhma/">
+          <AiOutlineInstagram style={{marginBottom:20}} color={content_themes[theme].color} size={25}/>
+        </Links>
+        <Links
+        onMouseEnter={() => cursorChangeHandler("hovered")}
+        onMouseLeave={() => cursorChangeHandler("")} 
+        target='_blank' 
+        className='social'
+        href="https://www.linkedin.com/in/eilidh-morrice-ashdown-a222a9132/">
+          <RiLinkedinFill style={{marginBottom:20}} color={content_themes[theme].color} size={25}/>
+        </Links>
+        <Links
+        onMouseEnter={() => cursorChangeHandler("hovered")}
+        onMouseLeave={() => cursorChangeHandler("")} 
+        target='_blank' 
+        className='social'
+        href="https://github.com/eilidhma">
+          <AiFillGithub style={{marginBottom:20}} color={content_themes[theme].color} size={25}/>
+        </Links>
       </Icons>
     </motion.div>
   </Cont>

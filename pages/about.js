@@ -42,13 +42,13 @@ export default function Dev() {
     <div>
       <NavBar />
       <Social />
-      <NavDots />
+      {/* <NavDots /> */}
       <SectionCont id="about">
         <About />
         <Girl />
-        <LineDrawing />
-        {/* <Text /> */}
-        <Tools />
+        <div style={{paddingTop:100}}>
+          <Tools />
+        </div>
       </SectionCont>
       <SectionCont id="contact">
         <Contact />

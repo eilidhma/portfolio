@@ -6,6 +6,8 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { createGlobalStyle } from 'styled-components'
 import Head from 'next/head';
+import NavBar from '../comps/NavBar';
+import Social from '../comps/Social';
 
 
 const GlobalStyle = createGlobalStyle`
@@ -18,6 +20,8 @@ const GlobalStyle = createGlobalStyle`
 function MyApp({ Component, pageProps }) {
 
   return <AppProvider>
+    <NavBar />
+    <Social />
     {/* <Head>
       <meta>
         <title>Eilidh Morrice-Ashdown frontend development UI UX design portfolio, BCIT D3 Program 2022</title>

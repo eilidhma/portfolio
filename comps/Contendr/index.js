@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { motion } from "framer-motion";
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useTheme } from '../../utils/provider';
 import { themes, content_themes } from '../../utils/variables';
 import { AiOutlineClose, AiOutlineRight, AiOutlineLeft } from 'react-icons/ai';
+import { MouseContext } from '../../utils/mousecontext';
 
 const Wrapper = styled.div`
   display:flex;
@@ -74,6 +75,7 @@ const Button = styled.a`
   border:1px solid ${props=>props.color};
   padding:10px;
   text-align:center;
+  color:${props=>props.color};
 `
 
 
@@ -116,6 +118,7 @@ const Contendr = ({
 }) => {
 
   const {theme, setTheme} = useTheme();
+  const { cursorType, cursorChangeHandler } = useContext(MouseContext);
   const [on, setOn] = useState(true)
 
   return <Wrapper>
@@ -131,7 +134,10 @@ const Contendr = ({
             </SubTitle>
           </Left>
           <Right>
-          <Button target='_blank' href='https://contendr-three.vercel.app/' color={content_themes[theme].color} background={themes[theme].body}>View Project</Button>
+          <Button 
+          onMouseEnter={() => cursorChangeHandler("hovered")}
+          onMouseLeave={() => cursorChangeHandler("")} 
+          target='_blank' href='https://contendr-three.vercel.app/' color={content_themes[theme].color} background={themes[theme].body}>View Project</Button>
             <img width={800} src={src}/>
           </Right>
       </Cont>

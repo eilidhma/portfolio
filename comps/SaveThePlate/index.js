@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import { motion } from "framer-motion";
-import { useState } from 'react';
+import { useState, useContext  } from 'react';
 import { useTheme } from '../../utils/provider';
 import { themes, content_themes } from '../../utils/variables';
 import { AiOutlineClose, AiOutlineRight, AiOutlineLeft } from 'react-icons/ai';
 import { GrNext, GrPrevious } from 'react-icons/gr';
+import { MouseContext } from '../../utils/mousecontext';
 
 const Wrapper = styled.div`
   display:flex;
@@ -73,6 +74,7 @@ const Button = styled.a`
   font-weight:300;
   font-size:1.2rem;
   border:1px solid ${props=>props.color};
+  color:${props=>props.color};
   padding:10px;
 `
 
@@ -96,24 +98,6 @@ const BackButton = styled.button`
   border:none;
 `
 
-const Next = styled.div`
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  position:absolute;
-  top:50%;
-  right:10vw;
-`
-
-const Previous = styled.div`
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  position:absolute;
-  top:50%;
-  left:10vw;
-`
-
 const SaveThePlate = ({
   background='black',
   overlay='black',
@@ -124,6 +108,7 @@ const SaveThePlate = ({
 
   const {theme, setTheme} = useTheme();
   const [on, setOn] = useState(true)
+  const { cursorType, cursorChangeHandler } = useContext(MouseContext);
 
   return <Wrapper>
     <Cont background={themes[theme].body}>
@@ -136,7 +121,12 @@ const SaveThePlate = ({
             • Lead Developer and Designer for a fully functional mobile app <br></br>
             • Created digital solution to food waste while offering lower priced food to users<br></br>
             • Developed with React Native, PHP, MySQL, and Firebase<br></br><br></br>
-            <Button target='_blank' href='https://github.com/eilidhma/save-the-plate' color={content_themes[theme].color} background={themes[theme].body}>Source Code</Button>
+            <Button
+              onMouseEnter={() => cursorChangeHandler("hovered")}
+              onMouseLeave={() => cursorChangeHandler("")} 
+             target='_blank' href='https://github.com/eilidhma/save-the-plate' color={content_themes[theme].color} background={themes[theme].body}>
+              Source Code
+            </Button>
             </SubTitle>
             <img width={800} src='savetheplate.png'/>
           </Left>

@@ -68,7 +68,7 @@ const Cont = styled.div`
   align-items:center;
   width:100%;
   height:80vh;
-  padding-top:2rem;
+  padding-top:1rem;
 }
 @media ${device.laptop} {
   display:flex;
@@ -76,7 +76,7 @@ const Cont = styled.div`
   align-items:flex-end;
   width:50%;
   height:80vh;
-  padding-top:2rem;
+  padding-top:1rem;
   padding-right:5rem;
 }
 @media ${device.desktop} {
@@ -97,6 +97,9 @@ const AboutText = styled.div`
   align-items:center;
   width:100%;
   height:50vh;
+  font-family: 'Italiana', serif;
+  font-weight:300;
+  color:${props=>props.color};
 }
 @media ${device.tablet}{
   display: flex;
@@ -104,6 +107,9 @@ const AboutText = styled.div`
   align-items:center;
   width:100%;
   height:50vh;
+  font-family: 'Italiana', serif;
+  font-weight:300;
+  color:${props=>props.color};
 }
 @media ${device.laptop}{
   display: flex;
@@ -111,10 +117,11 @@ const AboutText = styled.div`
   align-items:flex-start;
   width:50%;
   height:80vh;
-  padding-top:20vh;
+  padding-top:12vh;
   font-family: 'Italiana', serif;
   font-weight:300;
-  font-size:1.5rem;
+  font-size:1.8rem;
+  color:${props=>props.color};
 }
 @media ${device.desktop}{
   display: flex;
@@ -125,7 +132,8 @@ const AboutText = styled.div`
   padding-top:20vh;
   font-family: 'Italiana', serif;
   font-weight:300;
-  font-size:1.5rem;
+  font-size:2rem;
+  color:${props=>props.color};
 }
 `
 
@@ -142,14 +150,11 @@ const Girl = ({}) => {
   useEffect(() => ySpace.onChange(x => setIsComplete(x >= 1)), [ySpace]);
 
   return <Wrapper>
-    <AboutText>
-    In my spare time, you can find me occupying local thrift shops, attempting to master the acoustic guitar, or taking photos of my dogs in cute hats.
-    <br></br>
-    In my spare time, you can find me occupying local thrift shops, attempting to master the acoustic guitar, or taking photos of my dogs in cute hats.
-    <br></br>
-    In my spare time, you can find me occupying local thrift shops, attempting to master the acoustic guitar, or taking photos of my dogs in cute hats.
-    <br></br>
-    In my spare time, you can find me occupying local thrift shops, attempting to master the acoustic guitar, or taking photos of my dogs in cute hats.
+    <AboutText color={content_themes[theme].color}>I am a hybrid front-end developer / designer living in Vancouver, BC. I have recently graduated from British Columbia Institute of Technology where I trained in Digital Design and Development. Prior to my time at BCIT, I spent 5 years living in Victoria, BC, where I completed a dual bachelors degree in Biology and Psychology.
+<br></br><br></br>
+    The first 20 years of my life were spent performing and competing internationally as an Irish Dancer. 
+<br></br><br></br>
+    In my spare time, you can find me occupying local thrift shops or record stores, attempting to master the acoustic guitar, or taking photos of my dogs in cute hats.
     </AboutText>
     <Cont>
       {/* <svg width="80%" height="402" viewBox="0 0 574 402" fill="none" xmlns="http://www.w3.org/2000/svg">

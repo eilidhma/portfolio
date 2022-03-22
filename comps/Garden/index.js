@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { motion } from "framer-motion";
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useTheme } from '../../utils/provider';
 import { themes, content_themes } from '../../utils/variables';
 import { AiOutlineClose, AiOutlineRight, AiOutlineLeft } from 'react-icons/ai';
+import { MouseContext } from '../../utils/mousecontext';
 
 const Wrapper = styled.div`
   display:flex;
@@ -71,6 +72,7 @@ const Button = styled.a`
   font-weight:300;
   font-size:1.2rem;
   border:1px solid ${props=>props.color};
+  color:${props=>props.color};
   padding:10px;
   text-align:center;
 `
@@ -98,6 +100,7 @@ const Garden = ({
 }) => {
 
   const {theme, setTheme} = useTheme();
+  const { cursorType, cursorChangeHandler } = useContext(MouseContext);
   const [on, setOn] = useState(true)
 
   return <Wrapper>
@@ -114,7 +117,10 @@ const Garden = ({
             </SubTitle>
           </Left>
           <Right>
-          <Button target='_blank' href='https://garden-six.vercel.app/' color={content_themes[theme].color} background={themes[theme].body}>View Project</Button>
+          <Button
+          onMouseEnter={() => cursorChangeHandler("hovered")}
+          onMouseLeave={() => cursorChangeHandler("")} 
+           target='_blank' href='https://garden-six.vercel.app/' color={content_themes[theme].color} background={themes[theme].body}>View Project</Button>
             <img width={1000} src={src}/>
           </Right>
       </Cont>

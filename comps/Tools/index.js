@@ -34,7 +34,7 @@ const ToolCont = styled.div`
   justify-content:space-evenly;
   align-items:center;
   flex-wrap:wrap;
-  width:90vw;
+  width:60vw;
 `
 
 const Tool = styled.p`
@@ -48,6 +48,9 @@ const Tool = styled.p`
   align-items:center;
   padding-left:5px;
   padding-right:5px;
+  margin-left:10px;
+  margin-right:10px;
+  //min-width: 100px;
 `
 
 
@@ -70,7 +73,10 @@ const Tools = ({}) => {
      <Tool color={content_themes[theme].color}>HTML/CSS</Tool>
      <Tool color={content_themes[theme].color}>JavaScript</Tool>
      <Tool color={content_themes[theme].color}>React</Tool>
+     <Tool color={content_themes[theme].color}>Expo</Tool>
+     <Tool color={content_themes[theme].color}>Socket.IO</Tool>
      <Tool color={content_themes[theme].color}>Next.js</Tool>
+     <Tool color={content_themes[theme].color}>Mongo DB</Tool>
      <Tool color={content_themes[theme].color}>PHP/MySQL</Tool>
      <Tool color={content_themes[theme].color}>WordPress</Tool>
      <Tool color={content_themes[theme].color}>Figma</Tool>
@@ -78,6 +84,7 @@ const Tools = ({}) => {
      <Tool color={content_themes[theme].color}>Photoshop</Tool>
      <Tool color={content_themes[theme].color}>InDesign</Tool>
      <Tool color={content_themes[theme].color}>After Effects</Tool>
+     <Tool color={content_themes[theme].color}>Godot</Tool>
    </ToolCont>
   </Cont>
 }

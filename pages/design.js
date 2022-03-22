@@ -6,8 +6,12 @@ import NavBar from "../comps/NavBar";
 import Social from "../comps/Social";
 import NavDots from "../comps/NavDots";
 import Footer from "../comps/Footer";
+import { themes, content_themes } from '../utils/variables';
+import { useTheme } from '../utils/provider';
+
 import { device } from "../utils/breakpoints";
 import Design from "../comps/Design";
+import Design2 from "../comps/Design2";
 
 export default function Des() {
 
@@ -28,7 +32,7 @@ export default function Des() {
     margin:0;
     `
 
-    const Title = styled.h4`
+    const Text = styled.p`
     margin:0;
     font-family:'Porter', sans-serif;
     color:${props=>props.color};
@@ -42,46 +46,58 @@ export default function Des() {
     font-size:6rem;
     }
     `
+const {theme, setTheme} = useTheme();
 
 
   return (
     <div>
       <NavBar />
       <Social />
-      <NavDots />
+      {/* <NavDots /> */}
       <SectionCont>
         <TitleCont>
-            <Title>
-            Design. Its a lifestyle.</Title>
+            <Text color={content_themes[theme].color}>Design.<br></br> Its a lifestyle.</Text>
         </TitleCont>
       </SectionCont>
-        <Design 
-            src="contendr-2.png"
-            title="Contendr: UI/UX Design" 
-            subtitle="Work included:"
-        />
-        <Design 
-            src="proms.png"
-            title="Illustration" 
-            subtitle="Description:"
-        />
-        <Design 
-            width={400}
-            src="painting.png"
-            title="Digital painting" 
-            subtitle="Description:"
-        />
-        <Design 
-            width={400}
-            src="femme.png"
-            title="Graphic poster" 
-            subtitle="Description:"
-        />
-        <Design 
-            src="ediface.png"
-            title="Magazine design" 
-            subtitle="Description:"
-        />
+      <Design 
+              src="contendr-2.png"
+              title="UI/UX Design" 
+              subtitle3="Work included concept ideation, design, prototyping, and extensive user testing"
+              subtitle="Contendr:"
+              subtitle2="Member of the design team for a social media application"
+          />
+          <Design2 
+          title="Digital Artwork"
+          src="instax.png"
+          src2="girl.png"
+          src3="night.png"
+          width={400}
+          width2={400}
+          width3={400}
+           />
+           <Design2 
+          title="Typography"
+          src={null}
+          src2="proms.png"
+          src3={null}
+          width2={800}
+           />
+            <Design2 
+          title="Magazine design"
+          src="1.png"
+          src2="2.png"
+          src3="3.png"
+          width={400}
+          width2={400}
+          width3={400}
+           />
+           <Design2 
+          title="Website Design"
+          src={null}
+          src2="kohm.png"
+          src3={null}
+          width2={1200}
+           />
       <Footer />
     </div>
   )
