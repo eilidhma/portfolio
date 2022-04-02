@@ -161,6 +161,7 @@ const Hamb = ({
   }
 
 
+
   return <Cont>
             <Menu styles={ styles } customBurgerIcon={ 
             <svg width="15" height="6" viewBox="0 0 15 6" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -175,6 +176,26 @@ const Hamb = ({
             flexDirection:'column',
             height: '100%'
         }}>
+          <div 
+                onClick={()=>{
+                  r.push('./')
+                }
+                }
+                style={{
+                display:'flex',
+                flexDirection:'column',
+                textDecoration:'none',
+                fontFamily: 'Poppins, sans-serif',
+                fontWeight:300,
+                fontSize:'1rem',
+                width:'200px',
+                padding:'50px'
+                }} 
+                color={content_themes[theme].color}>
+                <text color={content_themes[theme].color}>0.0</text>
+                <text color={content_themes[theme].color}>Home</text>
+                </div>
+              
             <div 
                 onClick={()=>{
                   r.push('./dev')
@@ -232,9 +253,10 @@ const Hamb = ({
                 <div className='darkmode' style={{zIndex:101}} onClick={handleDarkMode}
             onMouseEnter={() => cursorChangeHandler("hovered")}
             onMouseLeave={() => cursorChangeHandler("")} >
+            
                 <DarkModeCont style={{
-                top:'20%',
-                right:'50%',
+                top:'10%',
+                left:'45%',
                 width:30
                 }}>
                 <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -252,8 +274,8 @@ const Hamb = ({
                     justifyContent:'center',
                     alignItems:'center',
                     position:'absolute',
-                    top:'20%',
-                    right:'50%',
+                    top:'10%',
+                    left:'45%',
                     width:30
                 }}
                 >

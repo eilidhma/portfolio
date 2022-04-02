@@ -47,10 +47,16 @@ const Imgs = styled.img`
   display: flex;
   justify-content:center;
   align-items:center;
-  width: 450px;
-  height: 450px;
   border-radius:50%;
   object-fit:cover;
+  @media ${device.mobile} {
+    width: 300px;
+    height: 300px;
+  }
+  @media ${device.tablet} {
+  width: 450px;
+  height: 450px;
+}
 `
 
 const Cont = styled.div`
@@ -100,6 +106,7 @@ const AboutText = styled.div`
   font-family: 'Italiana', serif;
   font-weight:300;
   color:${props=>props.color};
+  font-size: 1.2rem;
 }
 @media ${device.tablet}{
   display: flex;

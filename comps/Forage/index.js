@@ -5,6 +5,7 @@ import { useTheme } from '../../utils/provider';
 import { themes, content_themes } from '../../utils/variables';
 import { AiOutlineClose, AiOutlineRight, AiOutlineLeft } from 'react-icons/ai';
 import { MouseContext } from '../../utils/mousecontext';
+import { device } from '../../utils/breakpoints';
 
 const Wrapper = styled.div`
   display:flex;
@@ -12,7 +13,7 @@ const Wrapper = styled.div`
   justify-content:center;
   align-items:center;
   width:100vw;
-  height: 100vh;
+  min-height: 100vh;
 `
 
 const Cont = styled.div`
@@ -25,22 +26,12 @@ const Cont = styled.div`
   padding-bottom:100px;
 `
 
-const SubCont = styled.div`
-  display:flex;
-  flex-direction:row;
-  justify-content:center;
-  align-items:flex-start;
-  padding-left:100px;
-  padding-right:100px;
-  width:80vw;
-`
-
 const Left = styled.div`
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  width:70vw;
+  width:80vw;
 `
 
 const Right = styled.div`
@@ -78,7 +69,14 @@ const Button = styled.a`
   margin-top: 20px;
 `
 
-
+const Img = styled.img`
+@media ${device.mobile} { 
+  width: 300px;
+}
+@media ${device.laptop} { 
+  width: 700px;
+}
+`
 
 const Forage = ({
   title='Forage',
@@ -110,7 +108,7 @@ const Forage = ({
           onMouseEnter={() => cursorChangeHandler("hovered")}
           onMouseLeave={() => cursorChangeHandler("")} 
            target='_blank' href='https://forage-b791yiz8v-eilidhma.vercel.app/' color={content_themes[theme].color} background={themes[theme].body}>View Project</Button>
-            <img style={{marginTop:50}} width={700} src={src}/>
+            <Img style={{marginTop:50}} src={src}/>
           </Right>
       </Cont>
 

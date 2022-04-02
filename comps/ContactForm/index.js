@@ -7,6 +7,7 @@ import { MouseContext } from '../../utils/mousecontext';
 import { debounce } from '../../utils/debounce';
 import { useForm } from "react-hook-form";
 import emailjs from '@emailjs/browser';
+import { device } from '../../utils/breakpoints';
 
 const Cont = styled.div`
   display:flex;
@@ -18,7 +19,7 @@ const Cont = styled.div`
 
 const Section = styled.div`
   width:100%;
-  height:50px;
+  min-height:50px;
 `
 
 const Title = styled.p`
@@ -28,30 +29,53 @@ const Title = styled.p`
   color:${props=>props.color};
   text-align:center;
   width:100%;
-  height:50px;
+  min-height:50px;
 `
 
 const Label = styled.label`
-  font-family: 'Italiana', serif;
-  font-weight:300;
-  font-size:1.5rem;
-  color:${props=>props.color};
-  width:10vw;
-  display:inline-block;
+    @media ${device.mobile} {
+      display: block;
+      font-size: 1.2rem;
+    }
+    @media ${device.tablet} {
+      display:inline-block;
+      font-size:1.5rem; 
+  }
+    font-family: 'Italiana', serif;
+    font-weight:300;
+    color:${props=>props.color};
+    width: 100px;
 `
 
 const Input = styled.input`
-  width:40vw;
-  border-top:none;
+@media ${device.mobile} {
+    min-width:70vw;
+    border-top:none;
   border-left:none;
   border-right:none;
   border-bottom: 1px solid ${props=>props.color};
   background-color:${props=>props.background};
+  }
+  @media ${device.tablet} {
+    min-width:40vw;
+    border-top:none;
+  border-left:none;
+  border-right:none;
+  border-bottom: 1px solid ${props=>props.color};
+  background-color:${props=>props.background};
+  }
+  
 `
 
 const TextArea = styled.textarea`
-  max-width:40vw;
-  min-width:40vw;
+@media ${device.mobile} {
+  max-width:70vw;
+    min-width:70vw;
+  }
+  @media ${device.tablet} {
+    max-width:40vw;
+    min-width:40vw;
+  }
   border-top:none;
   border-left:none;
   border-right:none;

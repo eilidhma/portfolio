@@ -6,6 +6,7 @@ import { themes, content_themes } from '../../utils/variables';
 import { AiFillGithub, AiOutlineInstagram } from 'react-icons/ai'
 import { RiLinkedinFill } from 'react-icons/ri';
 import { device } from '../../utils/breakpoints';
+import Router, { useRouter } from 'next/router';
 
 const Cont = styled.footer`
   @media ${device.mobile} { 
@@ -76,6 +77,41 @@ const Info = styled.p`
   }
 `
 
+const InfoSmall = styled.a`
+z-index: 1000;
+  @media ${device.mobile} {
+    font-family: 'Poppins', sans-serif;
+    font-weight:300;
+    font-size:10px;
+    color:${props=>props.color};
+    padding-bottom:20px;
+  }
+  @media ${device.tablet} {
+    font-family: 'Poppins', sans-serif;
+    font-weight:300;
+    font-size:12px;
+    color:${props=>props.color};
+    padding-bottom:20px;
+    padding-left:30px;
+  }
+  @media ${device.laptop} {
+    font-family: 'Poppins', sans-serif;
+    font-weight:300;
+    font-size:14px;
+    color:${props=>props.color};
+    padding-bottom:20px;
+    padding-left:30px;
+  }
+  @media ${device.desktop} {
+    font-family: 'Poppins', sans-serif;
+    font-weight:300;
+    font-size:14px;
+    color:${props=>props.color};
+    padding-bottom:20px;
+    padding-left:30px;
+  }
+`
+
 const Icons = styled.div`
 @media ${device.mobile}{
   display:flex;
@@ -98,6 +134,7 @@ const Icons = styled.div`
 const Footer = () => {
 
   const {theme, setTheme} = useTheme();
+  const r = useRouter();
 
   return <Cont>
    <motion.div
@@ -112,6 +149,7 @@ const Footer = () => {
       </Icons>
     </motion.div>
    <Info color={content_themes[theme].color}>© Eilidh Morrice-Ashdown   2022</Info>
+   <InfoSmall onClick={()=>r.push('/privacy')} color={content_themes[theme].color}>Privacy Policy</InfoSmall>
   </Cont>
 }
 

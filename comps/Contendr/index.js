@@ -5,6 +5,7 @@ import { useTheme } from '../../utils/provider';
 import { themes, content_themes } from '../../utils/variables';
 import { AiOutlineClose, AiOutlineRight, AiOutlineLeft } from 'react-icons/ai';
 import { MouseContext } from '../../utils/mousecontext';
+import { device } from '../../utils/breakpoints';
 
 const Wrapper = styled.div`
   display:flex;
@@ -12,7 +13,7 @@ const Wrapper = styled.div`
   justify-content:center;
   align-items:center;
   width:100vw;
-  height: 100vh;
+  min-height: 100vh;
 `
 
 const Cont = styled.div`
@@ -77,36 +78,14 @@ const Button = styled.a`
   text-align:center;
   color:${props=>props.color};
 `
-
-
-const BackButton = styled.button`
-  font-family: 'Italiana', serif;
-  position:absolute;
-  top:20px;
-  right:10vw;
-  font-size:1.5rem;
-  padding:5px 10px 5px 10px;
-  color:${props=>props.color};
-  background-color:${props=>props.background};
-  border:none;
-`
-
-const Next = styled.div`
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  position:absolute;
-  top:50%;
-  right:10vw;
-`
-
-const Previous = styled.div`
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  position:absolute;
-  top:50%;
-  left:10vw;
+const Img = styled.img`
+margin-top: 50px;
+@media ${device.mobile} { 
+  width: 300px;
+}
+@media ${device.laptop} { 
+  width: 800px;
+}
 `
 
 const Contendr = ({
@@ -138,7 +117,7 @@ const Contendr = ({
           onMouseEnter={() => cursorChangeHandler("hovered")}
           onMouseLeave={() => cursorChangeHandler("")} 
           target='_blank' href='https://contendr-three.vercel.app/' color={content_themes[theme].color} background={themes[theme].body}>View Project</Button>
-            <img width={800} src={src}/>
+            <Img src={src}/>
           </Right>
       </Cont>
 

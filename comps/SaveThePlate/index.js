@@ -6,6 +6,7 @@ import { themes, content_themes } from '../../utils/variables';
 import { AiOutlineClose, AiOutlineRight, AiOutlineLeft } from 'react-icons/ai';
 import { GrNext, GrPrevious } from 'react-icons/gr';
 import { MouseContext } from '../../utils/mousecontext';
+import { device } from '../../utils/breakpoints';
 
 const Wrapper = styled.div`
   display:flex;
@@ -13,7 +14,7 @@ const Wrapper = styled.div`
   justify-content:center;
   align-items:center;
   width:100vw;
-  height: 100vh;
+  min-height: 100vh;
 `
 
 const Cont = styled.div`
@@ -27,21 +28,41 @@ const Cont = styled.div`
 `
 
 const SubCont = styled.div`
+@media ${device.mobile} { 
   display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding-left:100px;
+  padding-right:100px;
+  width:80vw;
+  }
+  @media ${device.laptop} { 
+    display:flex;
   flex-direction:row;
   justify-content:center;
   align-items:flex-start;
   padding-left:100px;
   padding-right:100px;
   width:80vw;
+  }
 `
 
 const Left = styled.div`
+@media ${device.mobile} { 
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  width:80vw;
+}
+@media ${device.laptop} {
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   width:50vw;
+}
 `
 
 const Right = styled.div`
@@ -98,6 +119,15 @@ const BackButton = styled.button`
   border:none;
 `
 
+const Img = styled.img`
+@media ${device.mobile} { 
+  width: 400px;
+}
+@media ${device.laptop} { 
+  width: 800px;
+}
+`
+
 const SaveThePlate = ({
   background='black',
   overlay='black',
@@ -128,7 +158,7 @@ const SaveThePlate = ({
               Source Code
             </Button>
             </SubTitle>
-            <img width={800} src='savetheplate.png'/>
+            <Img src='savetheplate.png'/>
           </Left>
           <Right>
             <Gif>

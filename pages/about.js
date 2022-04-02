@@ -42,7 +42,6 @@ export default function Dev() {
     <div>
       <NavBar />
       <Social />
-      {/* <NavDots /> */}
       <SectionCont id="about">
         <About />
         <Girl />

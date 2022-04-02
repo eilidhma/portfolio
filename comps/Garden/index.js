@@ -5,6 +5,7 @@ import { useTheme } from '../../utils/provider';
 import { themes, content_themes } from '../../utils/variables';
 import { AiOutlineClose, AiOutlineRight, AiOutlineLeft } from 'react-icons/ai';
 import { MouseContext } from '../../utils/mousecontext';
+import { device } from '../../utils/breakpoints';
 
 const Wrapper = styled.div`
   display:flex;
@@ -12,7 +13,7 @@ const Wrapper = styled.div`
   justify-content:center;
   align-items:center;
   width:100vw;
-  height: 100vh;
+  min-height: 100vh;
 `
 
 const Cont = styled.div`
@@ -25,22 +26,12 @@ const Cont = styled.div`
   padding-bottom:100px;
 `
 
-const SubCont = styled.div`
-  display:flex;
-  flex-direction:row;
-  justify-content:center;
-  align-items:flex-start;
-  padding-left:100px;
-  padding-right:100px;
-  width:80vw;
-`
-
 const Left = styled.div`
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  width:70vw;
+  width:80vw;
 `
 
 const Right = styled.div`
@@ -77,17 +68,14 @@ const Button = styled.a`
   text-align:center;
 `
 
-
-const BackButton = styled.button`
-  font-family: 'Italiana', serif;
-  position:absolute;
-  top:20px;
-  right:10vw;
-  font-size:1.5rem;
-  padding:5px 10px 5px 10px;
-  color:${props=>props.color};
-  background-color:${props=>props.background};
-  border:none;
+const Img = styled.img`
+margin-top: 50px;
+@media ${device.mobile} { 
+  width: 300px;
+}
+@media ${device.laptop} { 
+  width: 1000px;
+}
 `
 
 
@@ -121,7 +109,7 @@ const Garden = ({
           onMouseEnter={() => cursorChangeHandler("hovered")}
           onMouseLeave={() => cursorChangeHandler("")} 
            target='_blank' href='https://garden-six.vercel.app/' color={content_themes[theme].color} background={themes[theme].body}>View Project</Button>
-            <img width={1000} src={src}/>
+            <Img src={src}/>
           </Right>
       </Cont>
 
