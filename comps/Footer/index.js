@@ -149,7 +149,7 @@ const Footer = () => {
       </Icons>
     </motion.div>
    <Info color={content_themes[theme].color}>© Eilidh Morrice-Ashdown   2022</Info>
-   <InfoSmall onClick={()=>r.push('/privacy')} color={content_themes[theme].color}>Privacy Policy</InfoSmall>
+   <InfoSmall onClick={()=>r.push('./privacy')} color={content_themes[theme].color}>Privacy Policy</InfoSmall>
   </Cont>
 }
 
