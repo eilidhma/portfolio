@@ -25,7 +25,6 @@ export default function Dev() {
     <div>
       <NavBar />
       <Social />
-      {/* <NavDots /> */}
       <SectionCont>
         <Title />
       </SectionCont>

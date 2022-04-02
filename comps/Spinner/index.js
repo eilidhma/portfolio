@@ -5,15 +5,21 @@ import { useTheme } from '../../utils/provider';
 import { themes, content_themes } from '../../utils/variables';
 import { AiFillGithub, AiOutlineInstagram } from 'react-icons/ai'
 import { RiLinkedinFill } from 'react-icons/ri'
+import { device } from '../../utils/breakpoints';
 
 const Cont = styled.div`
-  position:absolute;
-  top:70vh;
-  left:70vw;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
+  @media ${device.mobile} { 
+    display: none;
+  }
+  @media ${device.tablet} { 
+    position:absolute;
+    top:70vh;
+    left:70vw;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+  }
 `
 
 const Spinner = ({

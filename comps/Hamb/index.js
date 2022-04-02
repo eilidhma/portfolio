@@ -123,7 +123,7 @@ const Hamb = ({
       top: '36px'
     },
     bmBurgerBars: {
-      background: '#373a47'
+      //background: '#373a47'
     },
     bmBurgerBarsHover: {
       background: '#a90000'
@@ -160,6 +160,7 @@ const Hamb = ({
     }
   }
 
+
   return <Cont>
             <Menu styles={ styles } customBurgerIcon={ 
             <svg width="15" height="6" viewBox="0 0 15 6" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -175,7 +176,10 @@ const Hamb = ({
             height: '100%'
         }}>
             <div 
-                onClick={()=>r.push('./dev')}
+                onClick={()=>{
+                  r.push('./dev')
+                }
+                }
                 style={{
                 display:'flex',
                 flexDirection:'column',

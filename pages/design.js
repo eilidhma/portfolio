@@ -12,6 +12,7 @@ import { useTheme } from '../utils/provider';
 import { device } from "../utils/breakpoints";
 import Design from "../comps/Design";
 import Design2 from "../comps/Design2";
+import Design3 from "../comps/Design3";
 
 export default function Des() {
 
@@ -37,7 +38,7 @@ export default function Des() {
     font-family:'Porter', sans-serif;
     color:${props=>props.color};
     @media ${device.mobile} { 
-    font-size:2rem;
+    font-size:1.5rem;
     }
     @media ${device.tablet} { 
     font-size:4rem;
@@ -53,7 +54,6 @@ const {theme, setTheme} = useTheme();
     <div>
       <NavBar />
       <Social />
-      {/* <NavDots /> */}
       <SectionCont>
         <TitleCont>
             <Text color={content_themes[theme].color}>Design.<br></br> Its a lifestyle.</Text>
@@ -71,16 +71,13 @@ const {theme, setTheme} = useTheme();
           src="instax.png"
           src2="girl.png"
           src3="night.png"
-          width={400}
-          width2={400}
-          width3={400}
            />
-           <Design2 
+           <Design3 
           title="Typography"
-          src={null}
-          src2="proms.png"
-          src3={null}
-          width2={800}
+          src={"proms.png"}
+          subtitle={null}
+          subtitle2={null}
+          subtitle3={null}
            />
             <Design2 
           title="Magazine design"
@@ -93,10 +90,9 @@ const {theme, setTheme} = useTheme();
            />
            <Design2 
           title="Website Design"
-          src={null}
-          src2="kohm.png"
-          src3={null}
-          width2={1200}
+          src="About.png"
+          src2="Contact.png"
+          src3="Home.png"
            />
       <Footer />
     </div>

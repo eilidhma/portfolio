@@ -10,7 +10,7 @@ const Cont = styled.div`
 @media ${device.mobile} { 
   display:flex;
   width:100vw;
-  justify-content:flex-start;
+  justify-content:flex-end;
   align-items:flex-end;
   position:relative;
   top:-30px;

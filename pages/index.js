@@ -30,9 +30,8 @@ export default function Home() {
 
   return (
     <div>
-      {/* <NavDots /> */}
       <HamMenu/>
-      <div id="intro">
+      <div>
         <SectionCont>
           <Loading />
           <Intro line1="My name" line2="is Eilidh"/>

@@ -20,7 +20,7 @@ const Cont = styled.div`
   font-family:'Porter', sans-serif;
   color:${props=>props.color};
   @media ${device.mobile} { 
-  font-size:2rem;
+  font-size:1.5rem;
   }
   @media ${device.tablet} { 
   font-size:4rem;

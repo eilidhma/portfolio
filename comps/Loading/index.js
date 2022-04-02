@@ -10,9 +10,11 @@ const Cont = styled.div`
   align-items:center;
   width:100vw;
   @media ${device.mobile} { 
-    justify-content:center;
+    justify-content:flex-start;
     height:30vh;
     padding-top:5rem;
+    position: relative;
+    left: -20px;
   }
   @media ${device.tablet} { 
     justify-content:flex-start;
@@ -31,6 +33,7 @@ const Hello = styled.div`
   flex-direction:row;
   font-family:'Porter';
   margin:0;
+  padding-left: 1.5rem;
 `
 
 const Letter = styled.p`

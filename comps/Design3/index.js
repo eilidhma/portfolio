@@ -139,9 +139,6 @@ const Design = ({
             <SubTitle color={content_themes[theme].color}>
                 {subtitle3}<br></br>
             </SubTitle>
-            <SubTitle color={content_themes[theme].color}>
-                <Button color={content_themes[theme].color} target={'_blank'} href='https://www.figma.com/proto/gMi4QMHoynbTkulFI3Ovh9/Contendr?page-id=411%3A1907&node-id=413%3A236&viewport=241%2C48%2C0.06&scaling=min-zoom&starting-point-node-id=413%3A236'>View prototype</Button>
-            </SubTitle>
         </SubCont>
       </Cont>
 

@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   justify-content:center;
   align-items:center;
   width:100vw;
-  height: 100vh;
+  min-height: 100vh;
 `
 
 const Cont = styled.div`
@@ -93,16 +93,23 @@ const Button = styled.a`
   padding:10px;
 `
 
+const Img = styled.img`
+@media ${device.mobile} { 
+  width: 250px;
+}
+@media ${device.tablet} { 
+  width: 200px;
+}
+@media ${device.laptop} { 
+  width: 300px;
+}
+`
+
 const Design2 = ({
-  background='black',
-  overlay='black',
   title='Design',
   src='savetheplate.png',
   src2='savetheplate.png',
-  src3='savetheplate.png',
-  width=200,
-  width2=200,
-  width3=200
+  src3='savetheplate.png'
 }) => {
 
   const {theme, setTheme} = useTheme();
@@ -112,11 +119,10 @@ const Design2 = ({
         {title}
     </Title>
     <Cont background={themes[theme].body}>
-        <img width={width} src={src}/>
-        <img width={width2} src={src2}/>
-        <img width={width3} src={src3}/>
-      </Cont>
-
+        <Img src={src}/>
+        <Img src={src2}/>
+        <Img src={src3}/>
+    </Cont>
   </Wrapper>
 }
 
