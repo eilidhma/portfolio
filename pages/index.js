@@ -17,6 +17,7 @@ import Text from "../comps/Text";
 import Tools from "../comps/Tools";
 import Footer from "../comps/Footer";
 import LineDrawing from "../comps/LineDrawing";
+import HamMenu from "../comps/Hamb";
 
 export default function Home() {
 
@@ -30,6 +31,7 @@ export default function Home() {
   return (
     <div>
       {/* <NavDots /> */}
+      <HamMenu/>
       <div id="intro">
         <SectionCont>
           <Loading />

@@ -8,9 +8,25 @@ import { MouseContext } from '../../utils/mousecontext';
 import { debounce } from '../../utils/debounce';
 import { Link } from 'react-scroll';
 import Router, { useRouter } from 'next/router';
+import { device } from '../../utils/breakpoints';
+
+const Cont = styled.div`
+  @media ${device.mobile} { 
+  display: none;
+  }
+  @media ${device.tablet} { 
+  display: inline-block;
+  }
+  @media ${device.laptop} { 
+  display: inline-block;
+  }
+  @media ${device.desktop} { 
+  display: inline-block;
+  }
+`
 
 const NavCont = styled.div`
-background-color:${props=>props.color};
+  background-color:${props=>props.color};
 `
 
 const navbarStyles = {
@@ -106,7 +122,9 @@ const NavBar = ({
     }
   }
 
-  return <motion.div
+  return <Cont>
+
+  <motion.div
     initial={{opacity:0}}
     animate={{opacity:1}}
     transition={{ duration: 1, delay:3}}
@@ -211,6 +229,7 @@ const NavBar = ({
       </div>
     </NavCont>
   </motion.div>
+  </Cont>
 }
 
 export default NavBar;

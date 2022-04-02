@@ -8,6 +8,7 @@ import { createGlobalStyle } from 'styled-components'
 import Head from 'next/head';
 import NavBar from '../comps/NavBar';
 import Social from '../comps/Social';
+import Hamb from '../comps/Hamb';
 
 
 const GlobalStyle = createGlobalStyle`
@@ -20,14 +21,16 @@ const GlobalStyle = createGlobalStyle`
 function MyApp({ Component, pageProps }) {
 
   return <AppProvider>
+  
     <NavBar />
     <Social />
-    {/* <Head>
-      <meta>
-        <title>Eilidh Morrice-Ashdown frontend development UI UX design portfolio, BCIT D3 Program 2022</title>
-        <description>This portfolio site offers an overview of my projects in frontend and backend web and app development, UI/UX design, and graphic design. Eilidh Morrice-Ashdown finished the Digital Design and Development program at BCIT in 2022. </description>
-      </meta>
-    </Head> */}
+    <Hamb />
+    <Head>
+      <title>Eilidh Morrice-Ashdown frontend development UI UX design portfolio, BCIT D3 Program 2022</title>
+      <meta name='description' content='This portfolio site offers an overview of my projects in frontend and backend web and app development, UI/UX design, and graphic design. Eilidh Morrice-Ashdown finished the Digital Design and Development program at BCIT in 2022.'/>
+      <meta name='author' content='Eilidh Morrice-Ashdown'/>
+      <meta name='keywords' content='developer front-end back-end UX UI BCIT portfolio'/>
+    </Head>
     <MouseContextProvider>
       <motion.div
       initial={{opacity:0}}
