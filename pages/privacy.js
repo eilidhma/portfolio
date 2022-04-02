@@ -41,7 +41,7 @@ export default function Privacy() {
     
     return <Cont>
         <Title color={content_themes[theme].color}>Terms of Use</Title>
-        {/* <Text color={content_themes[theme].color}>
+        <Text color={content_themes[theme].color}>
 
 Eilidh Morrice-Ashdown welcomes you to her Web site. Using this Web site indicates your consent and agreement to be bound by this User Agreement and any policies or practices contained herein.
 
@@ -55,7 +55,7 @@ Last Update: <br></br>
 <br></br>
 Eilidh Morrice-Ashdown + Digital Design and Development 2022
                                                                                                                                                             
-        </Text> */}
+        </Text>
         <Title color={content_themes[theme].color}>Privacy Policy</Title>
         {/* <Text color={content_themes[theme].color}>
 This policy applies to Eilidh Morrice-Ashdown's Web site only. It is designed to inform you of how and why Eilidh Morrice-Ashdown gathers personal and non-personal information about you. This policy complies with provisions of the British Columbia Freedom of Information and Protection of Privacy Act.
