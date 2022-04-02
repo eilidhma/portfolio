@@ -15,6 +15,7 @@ const Cont = styled.div`
     flex-direction: column;
 `
 
+
 const Title = styled.p`
   font-family: 'Italiana', serif;
   font-weight:300;
