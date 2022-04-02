@@ -177,24 +177,24 @@ const Hamb = ({
             height: '100%'
         }}>
           <div 
-                onClick={()=>{
-                  r.push('/')
-                }
-                }
-                style={{
-                display:'flex',
-                flexDirection:'column',
-                textDecoration:'none',
-                fontFamily: 'Poppins, sans-serif',
-                fontWeight:300,
-                fontSize:'1rem',
-                width:'200px',
-                padding:'50px'
-                }} 
-                color={content_themes[theme].color}>
-                <text color={content_themes[theme].color}>0.0</text>
-                <text color={content_themes[theme].color}>Home</text>
-                </div>
+              onClick={()=>{
+                r.push('/')
+              }
+              }
+              style={{
+              display:'flex',
+              flexDirection:'column',
+              textDecoration:'none',
+              fontFamily: 'Poppins, sans-serif',
+              fontWeight:300,
+              fontSize:'1rem',
+              width:'200px',
+              padding:'50px'
+              }} 
+              color={content_themes[theme].color}>
+              <text color={content_themes[theme].color}>0.0</text>
+              <text color={content_themes[theme].color}>Home</text>
+              </div>
             <div 
                 onClick={()=>{
                   r.push('./dev')
