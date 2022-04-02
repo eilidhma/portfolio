@@ -178,7 +178,7 @@ const Hamb = ({
         }}>
           <div 
                 onClick={()=>{
-                  r.push('./')
+                  r.push('/')
                 }
                 }
                 style={{
@@ -195,7 +195,6 @@ const Hamb = ({
                 <text color={content_themes[theme].color}>0.0</text>
                 <text color={content_themes[theme].color}>Home</text>
                 </div>
-              
             <div 
                 onClick={()=>{
                   r.push('./dev')
