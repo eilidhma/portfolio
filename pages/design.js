@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import * as Scroll from 'react-scroll';
 import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import styled from "styled-components";
@@ -8,13 +8,19 @@ import NavDots from "../comps/NavDots";
 import Footer from "../comps/Footer";
 import { themes, content_themes } from '../utils/variables';
 import { useTheme } from '../utils/provider';
-
+import { MouseContext } from '../utils/mousecontext';
 import { device } from "../utils/breakpoints";
 import Design from "../comps/Design";
 import Design2 from "../comps/Design2";
 import Design3 from "../comps/Design3";
 
 export default function Des() {
+
+  const { cursorType, cursorChangeHandler } = useContext(MouseContext);
+
+  useEffect(()=>{
+    cursorChangeHandler("")
+  },[])
 
   const SectionCont = styled.div`
     display:flex;

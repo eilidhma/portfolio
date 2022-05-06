@@ -114,6 +114,7 @@ const Contendr = ({
           </Left>
           <Right>
           <Button 
+          id="but"
           onMouseEnter={() => cursorChangeHandler("hovered")}
           onMouseLeave={() => cursorChangeHandler("")} 
           target='_blank' href='https://contendr-three.vercel.app/' color={content_themes[theme].color} background={themes[theme].body}>View Project</Button>

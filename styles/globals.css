@@ -56,6 +56,6 @@ a {
   opacity: 0.5;
 }
 
-a:hover, button:hover, .darkmode, .work:hover, #intro, #about, #work, #content, .nav {
+a:hover, button:hover, .darkmode, .work:hover, #intro, #about, #work, #content, .nav, #but:hover {
   cursor: pointer;
 }

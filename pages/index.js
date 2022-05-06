@@ -1,23 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import * as Scroll from 'react-scroll';
 import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import styled from "styled-components";
 import Loading from "../comps/Loading";
-import NavBar from "../comps/NavBar";
 import Intro from "../comps/Intro";
-import Social from "../comps/Social";
-import NavDots from "../comps/NavDots";
 import Spinner from "../comps/Spinner";
-import Title from "../comps/Title";
-import Girl from "../comps/Girl";
-import Cursor from "../comps/Cursor";
 import { motion } from "framer-motion";
-
 import Text from "../comps/Text";
-import Tools from "../comps/Tools";
 import Footer from "../comps/Footer";
 import LineDrawing from "../comps/LineDrawing";
 import HamMenu from "../comps/Hamb";
+import { MouseContext } from "../utils/mousecontext";
 
 export default function Home() {
 
@@ -27,6 +20,13 @@ export default function Home() {
     width:100vw;
     min-height: 100vh;
   `
+
+
+const { cursorType, cursorChangeHandler } = useContext(MouseContext);
+
+useEffect(()=>{
+  cursorChangeHandler("")
+},[])
 
   return (
     <div>

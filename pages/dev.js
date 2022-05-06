@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import * as Scroll from 'react-scroll';
 import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import styled from "styled-components";
@@ -11,6 +11,7 @@ import Garden from "../comps/Garden";
 import Contendr from "../comps/Contendr";
 import Footer from "../comps/Footer";
 import Forage from "../comps/Forage";
+import { MouseContext } from "../utils/mousecontext";
 
 export default function Dev() {
 
@@ -20,6 +21,13 @@ export default function Dev() {
     width:100vw;
     min-height: 100vh;
   `
+
+
+const { cursorType, cursorChangeHandler } = useContext(MouseContext);
+
+useEffect(()=>{
+  cursorChangeHandler("")
+},[])
 
   return (
     <div>
