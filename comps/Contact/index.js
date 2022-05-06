@@ -47,7 +47,7 @@ const Contact = ({}) => {
   const [on, setOn] = useState(true)
 
   return <Cont>
-   <Title>
+   <Title color={content_themes[theme].color}>
    Contact Me
    </Title>
   </Cont>
