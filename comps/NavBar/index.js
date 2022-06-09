@@ -159,6 +159,23 @@ const NavBar = ({
           <text>1.0</text>
           <text>Development</text>
         </div>
+        <div 
+        onClick={()=>r.push('./caseStudy')}
+        style={{
+          display:'flex',
+          flexDirection:'column',
+          textDecoration:'none',
+          fontFamily: 'Poppins, sans-serif',
+          fontWeight:300,
+          fontSize:'1rem'
+        }}
+        onMouseEnter={() => cursorChangeHandler("hovered")}
+        onMouseLeave={() => cursorChangeHandler("")} 
+        className='nav' 
+        color={content_themes[theme].color}>
+          <text>2.0</text>
+          <text>Case Study</text>
+        </div>
         <div  
         onClick={()=>r.push('./design')}
         style={{
@@ -173,7 +190,7 @@ const NavBar = ({
         onMouseLeave={() => cursorChangeHandler("")} 
         className='nav' 
         color={content_themes[theme].color}>
-          <text>2.0</text>
+          <text>3.0</text>
           <text>Design</text>
         </div>
         <div 
@@ -190,7 +207,7 @@ const NavBar = ({
         onMouseLeave={() => cursorChangeHandler("")} 
         className='nav' 
         color={content_themes[theme].color}>
-          <text>3.0</text>
+          <text>4.0</text>
           <text>About</text>
         </div>
       </SectionsCont>
