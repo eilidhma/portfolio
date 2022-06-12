@@ -195,7 +195,7 @@ const Hamb = ({
               fontWeight:300,
               fontSize:'1rem',
               width:'200px',
-              padding:'50px'
+              padding:'30px'
               }} 
               color={content_themes[theme].color}>
               <text color={content_themes[theme].color}>0.0</text>
@@ -215,7 +215,7 @@ const Hamb = ({
                 fontWeight:300,
                 fontSize:'1rem',
                 width:'200px',
-                padding:'50px'
+                padding:'30px'
                 }} 
                 color={content_themes[theme].color}>
                 <text color={content_themes[theme].color}>1.0</text>
@@ -235,7 +235,7 @@ const Hamb = ({
                 fontWeight:300,
                 fontSize:'1rem',
                 width:'200px',
-                padding:'50px'
+                padding:'30px'
                 }}
                 color={content_themes[theme].color}>
                 <text color={content_themes[theme].color}>2.0</text>
@@ -255,7 +255,7 @@ const Hamb = ({
                 fontWeight:300,
                 fontSize:'1rem',
                 width:'200px',
-                padding:'50px'
+                padding:'30px'
                 }}
                 className='nav' 
                 color={content_themes[theme].color}>
@@ -276,7 +276,7 @@ const Hamb = ({
                 fontWeight:300,
                 fontSize:'1rem',
                 width:'200px',
-                padding:'50px'
+                padding:'30px'
                 }}
                 className='nav' 
                 color={content_themes[theme].color}>
