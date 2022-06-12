@@ -7,6 +7,7 @@ import { AiOutlineClose, AiOutlineRight, AiOutlineLeft } from 'react-icons/ai';
 import { GrNext, GrPrevious } from 'react-icons/gr';
 import { MouseContext } from '../../utils/mousecontext';
 import { device } from '../../utils/breakpoints';
+import { useRouter } from 'next/router';
 
 const Wrapper = styled.div`
   display:flex;
@@ -97,6 +98,7 @@ const Button = styled.a`
   border:1px solid ${props=>props.color};
   color:${props=>props.color};
   padding:10px;
+  margin-right: 20px;
 `
 
 const Gif = styled.div`
@@ -139,6 +141,7 @@ const SaveThePlate = ({
   const {theme, setTheme} = useTheme();
   const [on, setOn] = useState(true)
   const { cursorType, cursorChangeHandler } = useContext(MouseContext);
+  const r = useRouter();
 
   return <Wrapper>
     <Cont background={themes[theme].body}>
@@ -156,6 +159,13 @@ const SaveThePlate = ({
               onMouseLeave={() => cursorChangeHandler("")} 
              target='_blank' href='https://github.com/eilidhma/save-the-plate' color={content_themes[theme].color} background={themes[theme].body}>
               Source Code
+            </Button>
+            <Button
+              onClick={()=>r.push('./caseStudy')}
+              onMouseEnter={() => cursorChangeHandler("hovered")}
+              onMouseLeave={() => cursorChangeHandler("")} 
+              color={content_themes[theme].color} background={themes[theme].body}>
+              Case Study
             </Button>
             </SubTitle>
             <Img src='savetheplate.png'/>

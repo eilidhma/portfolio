@@ -80,10 +80,10 @@ const Cont = styled.div`
   display:flex;
   justify-content:flex-end;
   align-items:flex-end;
-  width:50%;
+  width:60%;
   height:80vh;
   padding-top:1rem;
-  padding-right:5rem;
+  padding-right:4rem;
 }
 @media ${device.desktop} {
   display:flex;
@@ -103,7 +103,7 @@ const AboutText = styled.div`
   align-items:center;
   width:100%;
   height:50vh;
-  font-family: 'Italiana', serif;
+  font-family: 'Poppins', sans-serif;
   font-weight:300;
   color:${props=>props.color};
   font-size: 1.2rem;
@@ -114,7 +114,7 @@ const AboutText = styled.div`
   align-items:center;
   width:100%;
   height:50vh;
-  font-family: 'Italiana', serif;
+  font-family: 'Poppins', sans-serif;
   font-weight:300;
   color:${props=>props.color};
 }
@@ -122,12 +122,12 @@ const AboutText = styled.div`
   display: flex;
   justify-content:center;
   align-items:flex-start;
-  width:50%;
+  width:40%;
   height:80vh;
   padding-top:12vh;
-  font-family: 'Italiana', serif;
+  font-family: 'Poppins', sans-serif;
   font-weight:300;
-  font-size:1.8rem;
+  font-size:1.2rem;
   color:${props=>props.color};
 }
 @media ${device.desktop}{
@@ -137,9 +137,9 @@ const AboutText = styled.div`
   width:50%;
   height:80vh;
   padding-top:20vh;
-  font-family: 'Italiana', serif;
+  font-family: 'Poppins', sans-serif;
   font-weight:300;
-  font-size:2rem;
+  font-size:1.2rem;
   color:${props=>props.color};
 }
 `
