@@ -18,6 +18,7 @@ const Cont = styled.div`
   padding-left:30px;
   padding-right:30px;
   height:100%;
+  z-index: 10;
   @media ${device.mobile} { 
     display:none;
   }
@@ -102,7 +103,7 @@ const Social = ({
       <Line style={{backgroundColor:content_themes[theme].color}}/>
       <Icons>
         <Links
-        onMouseEnter={() => cursorChangeHandler("hovered")}
+        onMouseOver={() => cursorChangeHandler("hovered")}
         onMouseLeave={() => cursorChangeHandler("")} 
         target='_blank' 
         className='social'
@@ -110,7 +111,7 @@ const Social = ({
           <AiOutlineInstagram style={{marginBottom:20}} color={content_themes[theme].color} size={25}/>
         </Links>
         <Links
-        onMouseEnter={() => cursorChangeHandler("hovered")}
+        onMouseOver={() => cursorChangeHandler("hovered")}
         onMouseLeave={() => cursorChangeHandler("")} 
         target='_blank' 
         className='social'
@@ -118,7 +119,7 @@ const Social = ({
           <RiLinkedinFill style={{marginBottom:20}} color={content_themes[theme].color} size={25}/>
         </Links>
         <Links
-        onMouseEnter={() => cursorChangeHandler("hovered")}
+        onMouseOver={() => cursorChangeHandler("hovered")}
         onMouseLeave={() => cursorChangeHandler("")} 
         target='_blank' 
         className='social'

@@ -5,13 +5,14 @@ import {
   useSpring,
   useTransform
 } from "framer-motion";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useTheme } from '../../utils/provider';
 import { themes, content_themes } from '../../utils/variables';
 import { device } from '../../utils/breakpoints';
 import Image from 'next/image';
 import Me from '../../public/me.JPG'
 import Router, { useRouter } from 'next/router';
+import { MouseContext } from '../../utils/mousecontext';
 
 const Wrapper = styled.div`
 width: 100%;
@@ -106,6 +107,7 @@ const LineDrawing = ({}) => {
   const ySpace = useTransform(scrollYProgress, [0, 0.85], [0, 1]);
   const pathLength = useSpring(ySpace, { stiffness: 400, damping: 90 });
   const r = useRouter();
+  const { cursorType, cursorChangeHandler } = useContext(MouseContext);
 
   useEffect(() => ySpace.onChange(x => setIsComplete(x >= 1)), [ySpace]);
 
@@ -129,8 +131,19 @@ const LineDrawing = ({}) => {
     </Cont>
     <ButCont>
       <Title color={content_themes[theme].color}>View My Work:</Title>
-      <But onClick={()=> r.push('/dev')} color={content_themes[theme].color} background={themes[theme].body}>Development</But>
-      <But onClick={()=> r.push('/design')} color={content_themes[theme].color} background={themes[theme].body}>Design</But>
+      <But 
+        onMouseOver={() => cursorChangeHandler("hovered")}
+        onMouseLeave={() => cursorChangeHandler("")} 
+        onClick={()=> {
+          cursorChangeHandler("")
+          r.push('/dev')
+          }} color={content_themes[theme].color} background={themes[theme].body}>Development</But>
+      <But onMouseOver={() => cursorChangeHandler("hovered")}
+        onMouseLeave={() => cursorChangeHandler("")} 
+        onClick={()=> {
+          cursorChangeHandler("")
+          r.push('/design')
+          }} color={content_themes[theme].color} background={themes[theme].body}>Design</But>
     </ButCont>
     </Wrapper>
 }

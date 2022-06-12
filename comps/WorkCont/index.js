@@ -72,21 +72,21 @@ const WorkCont = ({
   return <Cont>
     <LeftSection>
       <Title color={content_themes[theme].color}>2.1 Development</Title>
-      <Text className='work' onMouseEnter={() => cursorChangeHandler("hovered")}
+      <Text className='work' onMouseOver={() => cursorChangeHandler("hovered")}
       onMouseLeave={() => cursorChangeHandler("")} 
       color={content_themes[theme].color} 
       onClick={onClickSaveThePlate} 
       style={{textAlign:'right'}}>
         SaveThePlate
         </Text>
-      <Text className='work' onMouseEnter={() => cursorChangeHandler("hovered")}
+      <Text className='work' onMouseOver={() => cursorChangeHandler("hovered")}
       onMouseLeave={() => cursorChangeHandler("")} 
       color={content_themes[theme].color} 
       onClick={onClickGarden} 
       style={{textAlign:'right'}}>
         Garden
       </Text>
-      <Text className='work' onMouseEnter={() => cursorChangeHandler("hovered")}
+      <Text className='work' onMouseOver={() => cursorChangeHandler("hovered")}
       onMouseLeave={() => cursorChangeHandler("")} 
       color={content_themes[theme].color} 
       onClick={onClickContendr} 

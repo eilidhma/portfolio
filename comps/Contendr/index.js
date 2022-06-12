@@ -68,16 +68,29 @@ const SubTitle = styled.p`
 `
 
 const Button = styled.a`
+@media ${device.mobile} { 
+  width: 120px;
+  font-size: 1rem;
+}
+@media ${device.tablet} {
   width:200px;
   background-color:${props=>props.background};
   font-family: 'Poppins', sans-serif;
   font-weight:300;
   font-size:1.2rem;
   border:1px solid ${props=>props.color};
+  color:${props=>props.color};
   padding:10px;
   text-align:center;
-  color:${props=>props.color};
+  margin-top: 20px;
+}
+  &:hover{
+    border:1px solid ${props=>props.background};
+    color:${props=>props.background};
+    background-color:${props=>props.color};
+  }
 `
+
 const Img = styled.img`
 margin-top: 50px;
 @media ${device.mobile} { 
@@ -115,7 +128,7 @@ const Contendr = ({
           <Right>
           <Button 
           id="but"
-          onMouseEnter={() => cursorChangeHandler("hovered")}
+          onMouseOver={() => cursorChangeHandler("hovered")}
           onMouseLeave={() => cursorChangeHandler("")} 
           target='_blank' href='https://contendr-three.vercel.app/' color={content_themes[theme].color} background={themes[theme].body}>View Project</Button>
             <Img src={src}/>

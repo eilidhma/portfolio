@@ -100,7 +100,7 @@ const NavDots = ({
         onSetActive={()=>{setIntro(true)}}
         onSetInactive={()=>{setIntro(false)}}
         activeClass="intro"
-        onMouseEnter={() => cursorChangeHandler("hovered")}
+        onMouseOver={() => cursorChangeHandler("hovered")}
         onMouseLeave={() => cursorChangeHandler("")} 
         to="intro" 
         spy={true} 
@@ -114,7 +114,7 @@ const NavDots = ({
         onSetActive={()=>{setAbout(true)}}
         onSetInactive={()=>{setAbout(false)}}
         activeClass="about"
-        onMouseEnter={() => cursorChangeHandler("hovered")}
+        onMouseOver={() => cursorChangeHandler("hovered")}
         onMouseLeave={() => cursorChangeHandler("")} 
         to="about" 
         spy={true} 
@@ -128,7 +128,7 @@ const NavDots = ({
         onSetActive={()=>{setWork(true)}}
         onSetInactive={()=>{setWork(false)}}
         activeClass="work"
-        onMouseEnter={() => cursorChangeHandler("hovered")}
+        onMouseOver={() => cursorChangeHandler("hovered")}
         onMouseLeave={() => cursorChangeHandler("")} 
         to="work" 
         spy={true} 
@@ -142,7 +142,7 @@ const NavDots = ({
         onSetActive={()=>{setContact(true)}}
         onSetInactive={()=>{setContact(false)}}
         activeClass="contact"
-        onMouseEnter={() => cursorChangeHandler("hovered")}
+        onMouseOver={() => cursorChangeHandler("hovered")}
         onMouseLeave={() => cursorChangeHandler("")} 
         to="contact" 
         spy={true} 

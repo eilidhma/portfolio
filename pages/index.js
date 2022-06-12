@@ -12,6 +12,8 @@ import LineDrawing from "../comps/LineDrawing";
 import HamMenu from "../comps/Hamb";
 import { MouseContext } from "../utils/mousecontext";
 
+
+
 export default function Home() {
 
   const SectionCont = styled.div`
@@ -24,9 +26,6 @@ export default function Home() {
 
 const { cursorType, cursorChangeHandler } = useContext(MouseContext);
 
-useEffect(()=>{
-  cursorChangeHandler("")
-},[])
 
   return (
     <div>
