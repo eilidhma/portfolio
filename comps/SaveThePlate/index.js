@@ -90,15 +90,27 @@ const SubTitle = styled.p`
 `
 
 const Button = styled.a`
-  width:200px;
-  background-color:${props=>props.background};
-  font-family: 'Poppins', sans-serif;
-  font-weight:300;
-  font-size:1.2rem;
-  border:1px solid ${props=>props.color};
-  color:${props=>props.color};
-  padding:10px;
-  margin-right: 20px;
+  @media ${device.mobile} { 
+    width: 120px;
+    font-size:1rem;
+    margin-right: 10px;
+  }
+  @media ${device.tablet} {
+    width:200px;
+    background-color:${props=>props.background};
+    font-family: 'Poppins', sans-serif;
+    font-weight:300;
+    font-size:1.2rem;
+    border:1px solid ${props=>props.color};
+    color:${props=>props.color};
+    padding:10px;
+    margin-right: 20px;
+  }
+  &:hover{
+    border:1px solid ${props=>props.background};
+    color:${props=>props.background};
+    background-color:${props=>props.color};
+  }
 `
 
 const Gif = styled.div`
@@ -155,14 +167,14 @@ const SaveThePlate = ({
             • Created digital solution to food waste while offering lower priced food to users<br></br>
             • Developed with React Native, PHP, MySQL, and Firebase<br></br><br></br>
             <Button
-              onMouseEnter={() => cursorChangeHandler("hovered")}
+              onMouseOver={() => cursorChangeHandler("hovered")}
               onMouseLeave={() => cursorChangeHandler("")} 
              target='_blank' href='https://github.com/eilidhma/save-the-plate' color={content_themes[theme].color} background={themes[theme].body}>
               Source Code
             </Button>
             <Button
               onClick={()=>r.push('./caseStudy')}
-              onMouseEnter={() => cursorChangeHandler("hovered")}
+              onMouseOver={() => cursorChangeHandler("hovered")}
               onMouseLeave={() => cursorChangeHandler("")} 
               color={content_themes[theme].color} background={themes[theme].body}>
               Case Study

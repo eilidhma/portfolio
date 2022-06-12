@@ -18,14 +18,16 @@ const Cont = styled.div`
   }
 `
 
-const Cursor = () => {
+const Cursor = ({
+  
+}) => {
 const {theme, setTheme} = useTheme();
 const { x, y } = useMousePosition();
 const { cursorType, cursorChangeHandler } = useContext(MouseContext);
 const [show, setShow] = useState(false);
 
 return <Cont
-      className={"dot " + cursorType}
+      className={"dot"}
       style={{ 
         left: `${x}px`, 
         top: `${y}px` , 

@@ -37,6 +37,7 @@ const Content = styled.p`
 
 export default function Privacy() {
 
+
     const {theme, setTheme} = useTheme();
     
     return <Cont>

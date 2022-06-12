@@ -24,9 +24,6 @@ export default function Dev() {
 
 const { cursorType, cursorChangeHandler } = useContext(MouseContext);
 
-useEffect(()=>{
-  cursorChangeHandler("")
-},[])
 
   return (
     <div>

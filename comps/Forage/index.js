@@ -57,6 +57,11 @@ const SubTitle = styled.p`
 `
 
 const Button = styled.a`
+@media ${device.mobile} { 
+  width: 120px;
+  font-size: 1rem;
+}
+@media ${device.tablet} {
   width:200px;
   background-color:${props=>props.background};
   font-family: 'Poppins', sans-serif;
@@ -67,6 +72,12 @@ const Button = styled.a`
   padding:10px;
   text-align:center;
   margin-top: 20px;
+}
+  &:hover{
+    border:1px solid ${props=>props.background};
+    color:${props=>props.background};
+    background-color:${props=>props.color};
+  }
 `
 
 const Img = styled.img`
@@ -105,7 +116,7 @@ const Forage = ({
           </Left>
           <Right>
           <Button
-          onMouseEnter={() => cursorChangeHandler("hovered")}
+          onMouseOver={() => cursorChangeHandler("hovered")}
           onMouseLeave={() => cursorChangeHandler("")} 
            target='_blank' href='https://forage-b791yiz8v-eilidhma.vercel.app/' color={content_themes[theme].color} background={themes[theme].body}>View Project</Button>
             <Img style={{marginTop:50}} src={src}/>

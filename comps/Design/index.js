@@ -87,14 +87,31 @@ const SubTitle = styled.p`
 `
 
 const Button = styled.a`
-  width:200px;
-  background-color:${props=>props.background};
-  font-family: 'Poppins', sans-serif;
-  font-weight:300;
-  font-size:1.2rem;
-  border:1px solid ${props=>props.color};
-  color:${props=>props.color};
-  padding:10px;
+justify-content: center;
+    align-items: center;
+    display: flex;
+  @media ${device.mobile} { 
+    width: 120px;
+    font-size:1rem;
+    margin: 10px;
+  }
+  @media ${device.tablet} {
+    width:200px;
+    background-color:${props=>props.background};
+    font-family: 'Poppins', sans-serif;
+    font-weight:300;
+    font-size:1.2rem;
+    border:1px solid ${props=>props.color};
+    color:${props=>props.color};
+    padding:10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  &:hover{
+    border:1px solid ${props=>props.background};
+    color:${props=>props.background};
+    background-color:${props=>props.color};
+  }
 `
 
 const Img = styled.img`
@@ -139,9 +156,7 @@ const Design = ({
             <SubTitle color={content_themes[theme].color}>
                 {subtitle3}<br></br>
             </SubTitle>
-            <SubTitle color={content_themes[theme].color}>
-                <Button color={content_themes[theme].color} target={'_blank'} href='https://www.figma.com/proto/gMi4QMHoynbTkulFI3Ovh9/Contendr?page-id=411%3A1907&node-id=413%3A236&viewport=241%2C48%2C0.06&scaling=min-zoom&starting-point-node-id=413%3A236'>View prototype</Button>
-            </SubTitle>
+            <Button background={themes[theme].body} color={content_themes[theme].color} target={'_blank'} href='https://www.figma.com/proto/gMi4QMHoynbTkulFI3Ovh9/Contendr?page-id=411%3A1907&node-id=413%3A236&viewport=241%2C48%2C0.06&scaling=min-zoom&starting-point-node-id=413%3A236'>View prototype</Button>
         </SubCont>
       </Cont>
 

@@ -18,9 +18,7 @@ export default function Des() {
 
   const { cursorType, cursorChangeHandler } = useContext(MouseContext);
 
-  useEffect(()=>{
-    cursorChangeHandler("")
-  },[])
+
 
   const SectionCont = styled.div`
     display:flex;

@@ -16,6 +16,7 @@ import {
 
 export default function CaseStudy() {
 
+
   const [isComplete, setIsComplete] = useState(false);
   const [isCompleteHand, setIsCompleteHand] = useState(false);
   const { scrollYProgress } = useViewportScroll();

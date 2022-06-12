@@ -85,13 +85,28 @@ const TextArea = styled.textarea`
 `
 
 const Submit = styled.input`
-  font-family: 'Italiana', serif;
-  font-size:1.2rem;
+  @media ${device.mobile} { 
+  width: 120px;
+  font-size: 1rem;
+}
+@media ${device.tablet} {
+  width:200px;
   background-color:${props=>props.background};
-  color:${props=>props.color};
+  font-family: 'Poppins', sans-serif;
+  font-weight:300;
+  font-size:1.2rem;
   border:1px solid ${props=>props.color};
-  padding:10px 20px 10px 20px;
-  margin-top:50px;
+  color:${props=>props.color};
+  padding:10px;
+  text-align:center;
+  margin-top: 50px;
+}
+  &:hover{
+    border:1px solid ${props=>props.background};
+    color:${props=>props.background};
+    background-color:${props=>props.color};
+    cursor: pointer;
+  }
 `
 
 const ContactForm = ({}) => {
@@ -138,7 +153,7 @@ const ContactForm = ({}) => {
           value={"Send"}
           background={themes[theme].body} 
           color={content_themes[theme].color}
-          onMouseEnter={() => cursorChangeHandler("hovered")}
+          onMouseOver={() => cursorChangeHandler("hovered")}
           onMouseLeave={() => cursorChangeHandler("")} />
         </Section>
       </form>
