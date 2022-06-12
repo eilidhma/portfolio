@@ -90,20 +90,21 @@ const SubTitle = styled.p`
 `
 
 const Button = styled.a`
+    font-family: 'Poppins', sans-serif;
+    font-weight:300;
+    border:1px solid ${props=>props.color};
+    color:${props=>props.color};
+    background-color:${props=>props.background};
+    padding:10px;
+    text-align: center;
   @media ${device.mobile} { 
-    width: 120px;
+    width: 130px;
     font-size:1rem;
     margin-right: 10px;
   }
   @media ${device.tablet} {
     width:200px;
-    background-color:${props=>props.background};
-    font-family: 'Poppins', sans-serif;
-    font-weight:300;
     font-size:1.2rem;
-    border:1px solid ${props=>props.color};
-    color:${props=>props.color};
-    padding:10px;
     margin-right: 20px;
   }
   &:hover{
@@ -134,13 +135,18 @@ const BackButton = styled.button`
 `
 
 const Img = styled.img`
-@media ${device.mobile} { 
-  width: 400px;
-}
-@media ${device.laptop} { 
-  width: 800px;
-}
+  @media ${device.mobile} { 
+    width: 400px;
+  }
+  @media ${device.laptop} { 
+    width: 800px;
+  }
 `
+
+const ButCont = styled.div`
+  display: flex;
+`
+
 
 const SaveThePlate = ({
   background='black',
@@ -166,19 +172,21 @@ const SaveThePlate = ({
             • Lead Developer and Designer for a fully functional mobile app <br></br>
             • Created digital solution to food waste while offering lower priced food to users<br></br>
             • Developed with React Native, PHP, MySQL, and Firebase<br></br><br></br>
-            <Button
-              onMouseOver={() => cursorChangeHandler("hovered")}
-              onMouseLeave={() => cursorChangeHandler("")} 
-             target='_blank' href='https://github.com/eilidhma/save-the-plate' color={content_themes[theme].color} background={themes[theme].body}>
-              Source Code
-            </Button>
-            <Button
-              onClick={()=>r.push('./caseStudy')}
-              onMouseOver={() => cursorChangeHandler("hovered")}
-              onMouseLeave={() => cursorChangeHandler("")} 
-              color={content_themes[theme].color} background={themes[theme].body}>
-              Case Study
-            </Button>
+            <ButCont>
+              <Button
+                onMouseOver={() => cursorChangeHandler("hovered")}
+                onMouseLeave={() => cursorChangeHandler("")} 
+              target='_blank' href='https://github.com/eilidhma/save-the-plate' color={content_themes[theme].color} background={themes[theme].body}>
+                Source Code
+              </Button>
+              <Button
+                onClick={()=>r.push('./caseStudy')}
+                onMouseOver={() => cursorChangeHandler("hovered")}
+                onMouseLeave={() => cursorChangeHandler("")} 
+                color={content_themes[theme].color} background={themes[theme].body}>
+                Case Study
+              </Button>
+            </ButCont>
             </SubTitle>
             <Img src='savetheplate.png'/>
           </Left>
