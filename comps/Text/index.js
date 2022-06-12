@@ -12,7 +12,6 @@ const Cont = styled.div`
   width:100vw;
   justify-content:flex-start;
   align-items:flex-start;
-  padding-left:10vw;
 }
 
 @media ${device.tablet} { 
