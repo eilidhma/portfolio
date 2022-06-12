@@ -12,13 +12,7 @@ const Cont = styled.div`
     display: none;
   }
   @media ${device.tabletS} { 
-    position:absolute;
-    top:80vh;
-    left:50vw;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+    display: none;
   }
   @media ${device.laptop} { 
     position:absolute;
