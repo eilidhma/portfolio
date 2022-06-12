@@ -105,17 +105,17 @@ const Text = ({}) => {
         transition={{ duration: 1, delay:3 }}
         style={{paddingTop:'10vh', paddingRight:0, paddingBottom:0, paddingLeft:20}}
       >
-          <div style={{display:'flex', flexDirection:'row', border:'2px solid red'}}>
+          <div style={{display:'flex', flexDirection:'row'}}>
           {sentence1.map((o,i)=><motion.div whileHover={{ scale: 1.25 }}>
             <IntroText color={content_themes[theme].color} key={i}>{o}</IntroText>
           </motion.div>)}
           </div>
-          <div style={{display:'flex', flexDirection:'row', border:'2px solid red'}}>
+          <div style={{display:'flex', flexDirection:'row'}}>
           {sentence2.map((o,i)=><motion.div whileHover={{ scale: 1.25 }}>
             <IntroText color={content_themes[theme].color} key={i}>{o}</IntroText>
           </motion.div>)}
           </div>
-          <div style={{display:'flex', flexDirection:'row', border:'2px solid red'}}>
+          <div style={{display:'flex', flexDirection:'row'}}>
           {sentence3.map((o,i)=><motion.div whileHover={{ scale: 1.25 }}>
             <IntroText color={content_themes[theme].color} key={i}>{o}</IntroText>
           </motion.div>)}

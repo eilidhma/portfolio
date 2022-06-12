@@ -11,6 +11,7 @@ import Router, { useRouter } from 'next/router';
 import { device } from '../../utils/breakpoints';
 
 const Cont = styled.div`
+justify-content: space-between;
   @media ${device.mobile} { 
   display: none;
   }
@@ -51,22 +52,25 @@ const DarkModeCont = styled.div`
 `
 
 const LogoCont = styled.div`
+  width: 50vw;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:flex-start;
-  width:50vw;
   font-family: 'Poppins', sans-serif;
   font-weight:300;
   font-size:16px;
 `
 
 const SectionsCont = styled.div`
+  width: 90vw;
   display:flex;
   justify-content:space-around;
   align-items:center;
-  width:50vw;
   color:${props=>props.color};
+  @media ${device.laptop} { 
+    width:50vw;
+  }
 `
 
 const Section = styled.a`

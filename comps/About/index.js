@@ -21,10 +21,10 @@ const Title = styled.div`
   font-size:1.5rem;
   }
   @media ${device.tablet} { 
-  font-size:4rem;
+  font-size:3rem;
   }
-  @media ${device.laptop && device.desktop} { 
-  font-size:6rem;
+  @media ${device.laptopL} { 
+  font-size:5rem;
   }
 `
 

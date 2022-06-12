@@ -160,13 +160,18 @@ const Hamb = ({
     }
   }
 
+  const [open, setOpen] = useState(false)
+  useEffect(()=>{
+    console.log(open)
+  },[open])
+  console.log(open)
 
 
   return <Cont>
-            <Menu styles={ styles } customBurgerIcon={ 
+            <Menu onClose={()=>setOpen(false)} onOpen={()=>setOpen(true)} isOpen={open} styles={ styles } customBurgerIcon={ 
             <svg width="15" height="6" viewBox="0 0 15 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <line x1="0.5" y1="0.5" x2="14.5" y2="0.5" stroke={content_themes[theme].color} stroke-linecap="round"/>
-                <line x1="4.5" y1="5.5" x2="14.5" y2="5.5" stroke={content_themes[theme].color} stroke-linecap="round"/>
+                <line x1="0.5" y1="0.5" x2="14.5" y2="0.5" stroke={content_themes[theme].color} strokeLinecap="round"/>
+                <line x1="4.5" y1="5.5" x2="14.5" y2="5.5" stroke={content_themes[theme].color} strokeLinecap="round"/>
             </svg>
         } right >
         <div style={{
@@ -179,6 +184,7 @@ const Hamb = ({
           <div 
               onClick={()=>{
                 r.push('/')
+                setOpen(false)
               }
               }
               style={{
@@ -198,6 +204,7 @@ const Hamb = ({
             <div 
                 onClick={()=>{
                   r.push('./dev')
+                  setOpen(false)
                 }
                 }
                 style={{
@@ -214,8 +221,12 @@ const Hamb = ({
                 <text color={content_themes[theme].color}>1.0</text>
                 <text color={content_themes[theme].color}>Development</text>
                 </div>
+
                 <div 
-                onClick={()=>r.push('./design')}
+                onClick={()=>{
+                  r.push('./caseStudy')
+                  setOpen(false)
+                }}
                 style={{
                 display:'flex',
                 flexDirection:'column',
@@ -228,10 +239,14 @@ const Hamb = ({
                 }}
                 color={content_themes[theme].color}>
                 <text color={content_themes[theme].color}>2.0</text>
-                <text color={content_themes[theme].color}>Design</text>
+                <text color={content_themes[theme].color}>Case Study</text>
                 </div>
+
                 <div 
-                onClick={()=>r.push('./about')}
+                onClick={()=>{
+                  r.push('./design')
+                  setOpen(false)
+                }}
                 style={{
                 display:'flex',
                 flexDirection:'column',
@@ -242,20 +257,42 @@ const Hamb = ({
                 width:'200px',
                 padding:'50px'
                 }}
-                onMouseEnter={() => cursorChangeHandler("hovered")}
-                onMouseLeave={() => cursorChangeHandler("")} 
                 className='nav' 
                 color={content_themes[theme].color}>
                 <text color={content_themes[theme].color}>3.0</text>
+                <text color={content_themes[theme].color}>Design</text>
+                </div>
+
+                <div 
+                onClick={()=>{
+                  r.push('./about')
+                  setOpen(false)
+                }}
+                style={{
+                display:'flex',
+                flexDirection:'column',
+                textDecoration:'none',
+                fontFamily: 'Poppins, sans-serif',
+                fontWeight:300,
+                fontSize:'1rem',
+                width:'200px',
+                padding:'50px'
+                }}
+                className='nav' 
+                color={content_themes[theme].color}>
+                <text color={content_themes[theme].color}>4.0</text>
                 <text color={content_themes[theme].color}>About</text>
                 </div>
-                <div className='darkmode' style={{zIndex:101}} onClick={handleDarkMode}
-            onMouseEnter={() => cursorChangeHandler("hovered")}
-            onMouseLeave={() => cursorChangeHandler("")} >
+
+                <div className='darkmode' style={{zIndex:101}} onClick={()=>{
+                  setOpen(false)
+                  handleDarkMode()
+                  }} >
             
                 <DarkModeCont style={{
-                top:'10%',
-                left:'45%',
+                position: 'absolute',
+                top:20,
+                left:20,
                 width:30
                 }}>
                 <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -272,10 +309,10 @@ const Hamb = ({
                     display:'flex',
                     justifyContent:'center',
                     alignItems:'center',
-                    position:'absolute',
-                    top:'10%',
-                    left:'45%',
-                    width:30
+                    position: 'absolute',
+                top:20,
+                left:20,
+                width:30
                 }}
                 >
                 <svg width="47" height="47" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
