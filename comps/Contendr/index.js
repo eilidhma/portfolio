@@ -68,22 +68,26 @@ const SubTitle = styled.p`
 `
 
 const Button = styled.a`
-@media ${device.mobile} { 
-  width: 120px;
-  font-size: 1rem;
-}
-@media ${device.tablet} {
-  width:200px;
-  background-color:${props=>props.background};
-  font-family: 'Poppins', sans-serif;
-  font-weight:300;
-  font-size:1.2rem;
-  border:1px solid ${props=>props.color};
-  color:${props=>props.color};
-  padding:10px;
-  text-align:center;
-  margin-top: 20px;
-}
+justify-content: center;
+    align-items: center;
+    display: flex;
+  @media ${device.mobile} { 
+    width: 120px;
+    font-size:1rem;
+    margin: 10px;
+  }
+  @media ${device.tablet} {
+    width:200px;
+    background-color:${props=>props.background};
+    font-family: 'Poppins', sans-serif;
+    font-weight:300;
+    font-size:1.2rem;
+    border:1px solid ${props=>props.color};
+    color:${props=>props.color};
+    padding:10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
   &:hover{
     border:1px solid ${props=>props.background};
     color:${props=>props.background};
