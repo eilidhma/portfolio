@@ -22,7 +22,7 @@ export default function CaseStudy() {
   const ySpace = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
   const pathLength = useSpring(ySpace, { stiffness: 400, damping: 90 });
 
-  const ySpaceHand = useTransform(scrollYProgress, [0, 1], [0, 5]);
+  const ySpaceHand = useTransform(scrollYProgress, [0, 0], [0, 5]);
   const pathLengthHand = useSpring(ySpaceHand, { stiffness: 400, damping: 90 });
 
   useEffect(() => {
@@ -157,10 +157,10 @@ const { cursorType, cursorChangeHandler } = useContext(MouseContext);
         </Title>
         <LeftBlock>
             <Col paddingRight='0px' paddingLeft='12vw' width='60vw'>
-                <SubTitle>
+                <SubTitle color={content_themes[theme].color}>
                     Stage I: Ideation
                 </SubTitle>
-                <Text>
+                <Text color={content_themes[theme].color}>
                 During the final year of my program, I was tasked with pitching an idea for an application that benefited the community in a sustainable way. 
                 <br></br><br></br>
                 SaveThePlate was my solution: an application that provides reasonably priced restaurant meals to users while simultaneously reducing food waste. 
@@ -202,10 +202,10 @@ const { cursorType, cursorChangeHandler } = useContext(MouseContext);
                 </Col>
             </Display>
             <Col paddingRight='12vw' paddingLeft='0px' width='60vw'>
-                <SubTitle>
+                <SubTitle color={content_themes[theme].color}>
                     Stage II: Design Sprints
                 </SubTitle>
-                <Text>
+                <Text color={content_themes[theme].color}>
                 To start the design process, we began by brainstorming ideal features, layouts, and user flow for SaveThePlate <br></br><br></br>
                 From there, we assembled initial wireframes and then conducted user research to determine the most important features to include<br></br><br></br>
                 </Text>
@@ -218,16 +218,16 @@ const { cursorType, cursorChangeHandler } = useContext(MouseContext);
         </RightBlock>
         <Display>
             <ImgBlock>
-                <img src='/wireframe.png' width={'60%'}/>
+                <img src={content_themes[theme].color === '#252F1D' ? '/wireframe.svg' : '/wireframes-dm.svg'} width={'60%'}/>
             </ImgBlock>
         </Display>
         <Spacer/>
         <LeftBlock>
         <Col paddingRight='0px' paddingLeft='12vw' width='60vw'>
-            <SubTitle>
+            <SubTitle color={content_themes[theme].color}>
                 Stage III: Development
             </SubTitle>
-            <Text>
+            <Text color={content_themes[theme].color}>
             As lead developer, I began by reviewing the technical feasibility of our UI design. <br></br><br></br>
             Next, I began developing components using React Native Expo to maximize reusability and efficiency of code. I ensured cross-platform mobile functionality by continuously testing the application on both Xcode iOS simulators and Android devices.<br></br><br></br>
             I then focused on the application’s functionality and developed the core features.<br></br><br></br>
@@ -257,10 +257,10 @@ const { cursorType, cursorChangeHandler } = useContext(MouseContext);
                 </Col>
             </Display>
             <Col paddingRight='12vw' paddingLeft='0px' width='60vw'>
-                <SubTitle>
+                <SubTitle color={content_themes[theme].color}>
                     Stage IV: User Testing &amp; Debugging
                 </SubTitle>
-                <Text>
+                <Text color={content_themes[theme].color}>
                 The application was deployed and thorougly tested by both colleagues and non-developers to gauge user experience and find potential bugs. From there, the developers on the team made necessary adjustments and redeployed the application in time for the showcase presentation.
                 </Text>
             </Col>

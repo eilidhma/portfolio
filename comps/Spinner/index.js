@@ -11,10 +11,28 @@ const Cont = styled.div`
   @media ${device.mobile} { 
     display: none;
   }
-  @media ${device.tablet} { 
+  @media ${device.tabletS} { 
+    position:absolute;
+    top:80vh;
+    left:50vw;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+  }
+  @media ${device.laptop} { 
     position:absolute;
     top:70vh;
     left:70vw;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+  }
+  @media ${device.laptopL} { 
+    position:absolute;
+    top:70vh;
+    left:75vw;
     display:flex;
     flex-direction:column;
     justify-content:center;
