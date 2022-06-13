@@ -85,21 +85,21 @@ const TextArea = styled.textarea`
 `
 
 const Submit = styled.input`
+  background-color:${props=>props.background};
+  font-family: 'Poppins', sans-serif;
+  font-weight:300;
+  border:1px solid ${props=>props.color};
+  color:${props=>props.color};
+  padding:10px;
+  text-align:center;
+  margin-top: 50px;
   @media ${device.mobile} { 
   width: 120px;
   font-size: 1rem;
 }
 @media ${device.tablet} {
   width:200px;
-  background-color:${props=>props.background};
-  font-family: 'Poppins', sans-serif;
-  font-weight:300;
   font-size:1.2rem;
-  border:1px solid ${props=>props.color};
-  color:${props=>props.color};
-  padding:10px;
-  text-align:center;
-  margin-top: 50px;
 }
   &:hover{
     border:1px solid ${props=>props.background};

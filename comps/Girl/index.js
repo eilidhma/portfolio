@@ -102,7 +102,7 @@ const AboutText = styled.div`
   justify-content:center;
   align-items:center;
   width:100%;
-  height:50vh;
+  /* height:50vh; */
   font-family: 'Poppins', sans-serif;
   font-weight:300;
   color:${props=>props.color};
