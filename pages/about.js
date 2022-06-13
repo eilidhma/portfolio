@@ -22,6 +22,15 @@ export default function Dev() {
     width:100vw;
   `
 
+  const FullPage = styled.div`
+    display:flex;
+    flex-direction:column;
+    width:100vw;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+  `
+
 const { cursorType, cursorChangeHandler } = useContext(MouseContext);
 
 
@@ -29,13 +38,15 @@ const { cursorType, cursorChangeHandler } = useContext(MouseContext);
     <div>
       <NavBar />
       <Social />
-      <SectionCont>
-        <About />
-        <Girl />
+        <FullPage>
+          <About />
+        </FullPage>
+        <FullPage>
+          <Girl />
+        </FullPage>
         <div style={{paddingTop:100}}>
           <Tools />
         </div>
-      </SectionCont>
       <SectionCont>
         <Contact />
         <ContactForm />

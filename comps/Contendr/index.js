@@ -128,11 +128,10 @@ const Contendr = ({
           </Left>
           <Right>
           <Button 
-          id="but"
           onMouseOver={() => cursorChangeHandler("hovered")}
           onMouseLeave={() => cursorChangeHandler("")} 
           target='_blank' href='https://contendr-three.vercel.app/' color={content_themes[theme].color} background={themes[theme].body}>View Project</Button>
-            <Img src={src}/>
+          <Img src={src}/>
           </Right>
       </Cont>
 
