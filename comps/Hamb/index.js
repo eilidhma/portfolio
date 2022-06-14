@@ -12,6 +12,7 @@ import { slide as Menu } from 'react-burger-menu'
 import { device } from '../../utils/breakpoints';
 
 const Cont = styled.div`
+z-index: 1000;
 background-color: ${props=>props.bg};
 width: 100vw;
 position: fixed;
