@@ -119,6 +119,7 @@ const Icons = styled.div`
   justify-content:space-evenly;
   align-items:center;
   width:100vw;
+  z-index: 10;
 }
 @media ${device.tablet}{
   display:none;
@@ -129,6 +130,10 @@ const Icons = styled.div`
 @media ${device.desktop}{
   display:none;
 }
+`
+
+const Links = styled.a`
+
 `
 
 const Footer = () => {
@@ -143,9 +148,24 @@ const Footer = () => {
     transition={{ duration: 1, delay:3}}
     style={{display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column'}}>
       <Icons>
-        <AiOutlineInstagram style={{marginBottom:20}} color={content_themes[theme].color} size={25}/>
-        <RiLinkedinFill style={{marginBottom:20}} color={content_themes[theme].color} size={25}/>
-        <AiFillGithub style={{marginBottom:20}} color={content_themes[theme].color} size={25}/>
+      <Links
+        target='_blank' 
+        className='social'
+        href="https://www.instagram.com/eilidhma/">
+          <AiOutlineInstagram style={{marginBottom:20}} color={content_themes[theme].color} size={25}/>
+        </Links>
+        <Links
+        target='_blank' 
+        className='social'
+        href="https://www.linkedin.com/in/eilidh-morrice-ashdown-a222a9132/">
+          <RiLinkedinFill style={{marginBottom:20}} color={content_themes[theme].color} size={25}/>
+        </Links>
+        <Links
+        target='_blank' 
+        className='social'
+        href="https://github.com/eilidhma">
+            <AiFillGithub style={{marginBottom:20}} color={content_themes[theme].color} size={25}/>
+        </Links>
       </Icons>
     </motion.div>
    <Info color={content_themes[theme].color}>© Eilidh Morrice-Ashdown   2022</Info>

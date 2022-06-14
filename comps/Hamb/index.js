@@ -12,6 +12,11 @@ import { slide as Menu } from 'react-burger-menu'
 import { device } from '../../utils/breakpoints';
 
 const Cont = styled.div`
+background-color: ${props=>props.bg};
+width: 100vw;
+position: fixed;
+top: 0;
+height: 80px;
 @media ${device.tablet} { 
   display: none;
 }
@@ -167,7 +172,7 @@ const Hamb = ({
   console.log(open)
 
 
-  return <Cont>
+  return <Cont bg={themes[theme].body}>
             <Menu onClose={()=>setOpen(false)} onOpen={()=>setOpen(true)} isOpen={open} styles={ styles } customBurgerIcon={ 
             <svg width="15" height="6" viewBox="0 0 15 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <line x1="0.5" y1="0.5" x2="14.5" y2="0.5" stroke={content_themes[theme].color} strokeLinecap="round"/>

@@ -51,25 +51,28 @@ const Input = styled.input`
 @media ${device.mobile} {
     min-width:70vw;
     border-top:none;
-  border-left:none;
-  border-right:none;
-  border-bottom: 1px solid ${props=>props.color};
-  background-color:${props=>props.background};
+    border-left:none;
+    border-right:none;
+    border-bottom: 1px solid ${props=>props.color};
+    background-color:${props=>props.background};
   }
   @media ${device.tablet} {
     min-width:40vw;
     border-top:none;
-  border-left:none;
-  border-right:none;
-  border-bottom: 1px solid ${props=>props.color};
-  background-color:${props=>props.background};
-  }
+    border-left:none;
+    border-right:none;
+    border-bottom: 1px solid ${props=>props.color};
+    background-color:${props=>props.background};
+}
+  color:${props=>props.color};
+  font-family: 'Poppins', sans-serif;
+  font-weight:300;
   
 `
 
 const TextArea = styled.textarea`
 @media ${device.mobile} {
-  max-width:70vw;
+    max-width:70vw;
     min-width:70vw;
   }
   @media ${device.tablet} {
@@ -79,23 +82,29 @@ const TextArea = styled.textarea`
   border-top:none;
   border-left:none;
   border-right:none;
+  border-radius: 0px;
   background-color:${props=>props.background};
   border-bottom-color:${props=>props.color};
   resize:none;
+  color:${props=>props.color};
+  font-family: 'Poppins', sans-serif;
+  font-weight:300;
 `
 
 const Submit = styled.input`
-  font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight:300;
     border:1px solid ${props=>props.color};
     color:${props=>props.color};
     background-color:${props=>props.background};
     padding:10px;
     text-align: center;
+    margin-top: 100px;
   @media ${device.mobile} { 
     width: 200px;
     font-size:1rem;
     margin-right: 10px;
+    border-radius: 0px;
   }
   @media ${device.tablet} {
     width:200px;
@@ -106,6 +115,7 @@ const Submit = styled.input`
     border:1px solid ${props=>props.background};
     color:${props=>props.background};
     background-color:${props=>props.color};
+    cursor: pointer;
   }
 `
 
@@ -152,9 +162,7 @@ const ContactForm = ({}) => {
           type={"submit"}
           value={"Send"}
           background={themes[theme].body} 
-          color={content_themes[theme].color}
-          onMouseOver={() => cursorChangeHandler("hovered")}
-          onMouseLeave={() => cursorChangeHandler("")} />
+          color={content_themes[theme].color} />
         </Section>
       </form>
     </Cont>
