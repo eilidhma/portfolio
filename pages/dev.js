@@ -33,9 +33,9 @@ const { cursorType, cursorChangeHandler } = useContext(MouseContext);
       <SectionCont>
         <Title />
       </SectionCont>
+      <Garden />
       <SaveThePlate />
       <Forage />
-      <Garden />
       <Contendr />
       <Footer />
     </div>
