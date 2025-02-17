@@ -91,11 +91,12 @@ const Img = styled.img`
 `
 
 const Forage = ({
-  title='Forage',
+  title='Macanta',
+  // title='Forage',
   Back=()=>{},
   BackArrow=()=>{},
   NextArrow=()=>{},
-  src='forage.png'
+  src='macanta.png'
 }) => {
 
   const {theme, setTheme} = useTheme();
@@ -110,16 +111,16 @@ const Forage = ({
 
           <Left>
             <SubTitle color={content_themes[theme].color}>
-            • Developer for a web solution designed to offer users recipes based on inputted ingredients <br></br><br></br>
-            • Responsibilities included project ideation and UI design, front-end development, and back-end development<br></br><br></br>
-            • Created with Next JS, MongoDB, and Socket.IO
+            • Developer for a website for a local construction company <br></br><br></br>
+            • Responsibilities included UI design, front-end development, client communication <br></br><br></br>
+            • Created with Next JS and Figma
             </SubTitle>
           </Left>
           <Right>
           <Button
           onMouseOver={() => cursorChangeHandler("hovered")}
           onMouseLeave={() => cursorChangeHandler("")} 
-           target='_blank' href='https://forage-b791yiz8v-eilidhma.vercel.app/' color={content_themes[theme].color} background={themes[theme].body}>View Project</Button>
+           target='_blank' href='https://www.macantavancouver.ca/' color={content_themes[theme].color} background={themes[theme].body}>View Site</Button>
             <Img style={{marginTop:50}} src={src}/>
           </Right>
       </Cont>
