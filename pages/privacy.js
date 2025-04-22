@@ -35,6 +35,8 @@ const Content = styled.p`
     color:${props=>props.color};
 `
 
+// testing SSH
+
 export default function Privacy() {
 
 
